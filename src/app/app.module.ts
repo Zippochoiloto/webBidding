@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './HomePage/about/about.component';
+import { HomeComponent } from './HomePage/home/home.component';
 import { AdminComponent } from './adminPage/admin/admin.component';
 import { DashBoardComponent } from './adminPage/dash-board/dash-board.component';
 import { UserListComponent } from './adminPage/user-list/user-list.component';
@@ -13,8 +13,15 @@ import { NewUserComponent } from './adminPage/new-user/new-user.component';
 import { EditUserComponent } from './adminPage/edit-user/edit-user.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { DemoMaterialModule } from './home/material-module';
+import { DemoMaterialModule } from './HomePage/home/material-module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CarComponent } from './HomePage/car/car.component';
+import { ApartmentComponent } from './HomePage/apartment/apartment.component';
+import { MotorbikeComponent } from './HomePage/motorbike/motorbike.component';
+import { DashboardHomeComponent } from './HomePage/dashboard-home/dashboard-home.component';
+import { MatInputModule } from '@angular/material';
+import { MatFormFieldModule,MatFormFieldControl} from '@angular/material/form-field';
+// import { Router } from '@angular/router';
 
 
 
@@ -30,6 +37,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditUserComponent,
     LogInComponent,
     PageNotFoundComponent,
+    CarComponent,
+    ApartmentComponent,
+    MotorbikeComponent,
+    DashboardHomeComponent,
     
   ],
   imports: [
@@ -38,7 +49,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     DemoMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,6 +28,12 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+    background-color: burlywood;
+    
+}
+
+.Dashboard span{
+    padding-top:5px;
 }
 
 h2 {
@@ -58,3 +64,19 @@ mat-list-item:hover {
     cursor: pointer;
 }
 
+.header{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    background-image: url("image/header.jpg");
+    color: orange;
+}
+
+.header .comment{
+    padding: 25px 20px;
+}
+
+.header .Title{
+    padding-top: 20px;
+    cursor: pointer;
+}

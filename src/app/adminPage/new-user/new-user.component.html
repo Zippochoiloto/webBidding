@@ -1,64 +1,85 @@
-<h1>Create New User</h1>
 
-<form>
-  <form (ngSubmit)="onSubmit()">
-    <div class="example-container">
-      <mat-form-field>
-        <input
-          matInput
-          #Name
-          placeholder="Name"
-          required
-          [(ngModel)]="registerForm.name"
-          name="name"
-        />
-      </mat-form-field>
-    </div>
+<header>
+  <h2>Register New User</h2>
+</header>
+<body>
+  <div [formGroup]="profileForm" class="form">
+    <label>
+      First Name:
+    </label>
+    <mat-form-field>
+      <input
+        class="form-control form-control-sm"
+        matInput
+        type="text"
+        formControlName="firstName"
+      />
+    </mat-form-field>
 
-    <div class="example-container">
-      <mat-form-field>
-        <input
-          matInput
-          #email
-          placeholder="Email"
-          required
-          [(ngModel)]="registerForm.email"
-          name="name"
-        />
-      </mat-form-field>
-    </div>
+    <label>
+      Last Name:
+    </label>
 
-    <div class="example-container">
-      <mat-form-field>
-        <input
-          matInput
-          #input
-          placeholder="Wallet Value"
-          required
-          [(ngModel)]="registerForm.walet"
-          name="name"
-        />
-      </mat-form-field>
-    </div>
+    <mat-form-field>
+      <input
+        class="form-control form-control-sm"
+        matInput
+        type="text"
+        formControlName="lastName"
+      />
+    </mat-form-field>
 
-    <div class="example-container">
-      <mat-form-field>
-        <input matInput #input placeholder="Phone Numer" required
-        [(ngModel)]="registerForm.phone"
-        name="name"/>
-      </mat-form-field>
-    </div>
+    <label>
+      Email:
+    </label>
 
-    <div>
-      <mat-form-field>
-        <mat-select placeholder="Role" [(ngModel)]="registerForm.role"
-        name="name">
-          <mat-option value="Admin">Admin</mat-option>
-          <mat-option value="User">User</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+    <mat-form-field>
+      <input
+        class="form-control form-control-sm"
+        matInput
+        type="text"
+        formControlName="email"
+      />
+      <mat-error *ngIf="profileForm.get('email')"> Email invalid</mat-error>
+    </mat-form-field>
 
-    <button type="submit">Submit</button>
-  </form>
-</form>
+    <label>
+      Phone:
+    </label>
+
+    <mat-form-field>
+      <input
+        class="form-control form-control-sm"
+        matInput
+        type="text"
+        formControlName="Phone"
+      />
+    </mat-form-field>
+
+    <label>
+      Wallet:
+    </label>
+    <mat-form-field>
+      <input
+        class="form-control form-control-sm"
+        matInput
+        type="text"
+        formControlName="wallet"
+      />
+    </mat-form-field>
+
+    <label>
+      Role:
+    </label>
+    <mat-form-field>
+      <mat-select placeholder="Choose Role">
+        <mat-option value="User">User</mat-option>
+        <mat-option value="Admin">Admin</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button type="submit" (click)="onSubmit()" [disabled]="!profileForm.valid">
+      Submit
+    </button>
+  </div>
+</body>

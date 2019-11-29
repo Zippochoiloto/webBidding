@@ -1,4 +1,4 @@
-import { userList, Section } from "./data-Model/data-model";
+import { userList, Section, HomePageRoute, ApartmentPageRoute } from "./data-Model/data-model";
 
 export const UserList: userList[] = [
   {
@@ -49,11 +49,21 @@ export const Dashboard: Section[] = [
     route: "userList"
   },
   {
-    name: "New User",
-    route: "newUser"
-  },
-  {
-    name: "Edit User",
-    route: "editUser"
+    name: "Product List",
+    route: "productList"
   }
 ];
+
+export const homePage: HomePageRoute[] = [
+  { name: "Home", route: "/home" },
+  { name: "Apartment", route: "/home/apartment" },
+  { name: "Car", route: "/home/car" },
+  { name: "Motorbike", route: "/home/motorbike" },
+  { name: "About", route: "about" }
+];
+
+export const apartmentPageRoute: ApartmentPageRoute[] = [
+  {name:"Times City", route: "/home/apartment/Times City"},
+  {name:"Royal City", route: "/home/apartment/Royal City"},
+  {name:"River Side", route: "/home/apartment/Royal City"},
+]

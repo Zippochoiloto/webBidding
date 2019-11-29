@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatTabsModule} from '@angular/material/tabs';
+import { homePage } from 'src/app/data';
+
 
 @Component({
   selector: 'app-home',
@@ -6,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  navLinks = homePage
   constructor() { }
 
   ngOnInit() {

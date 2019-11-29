@@ -20,7 +20,8 @@ export class UserListComponent implements OnInit {
     "email",
     "Wallet",
     "Phone Number",
-    "Role"
+    "Role",
+    "Action"
   ];
   dataSource = new MatTableDataSource(UserList);;
 

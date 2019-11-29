@@ -1,0 +1,35 @@
+header {
+    padding-left:20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+body{
+    padding-left:20px;
+}
+
+.form {
+    display:flex;
+    flex-direction: column;
+    /* border: 1px solid rgb(209, 192, 192) */
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+    height: 50px;
+    padding: 0px;
+}
+
+label {
+    margin: 0px;
+}
+
+input{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+button{
+    background-color: blue;
+    color: black;
+    cursor: pointer;
+}

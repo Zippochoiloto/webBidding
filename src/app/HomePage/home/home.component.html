@@ -1,0 +1,19 @@
+<ul class="header">
+  <li><h2 routerLink="/home" class ="Title">Web Bidding.com</h2></li>
+  <li class="comment"><button mat-raised-button color="primary" routerLink = "/logIn">Sign In</button></li>
+</ul>
+
+<nav mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.route"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [active]="rla.isActive"
+  >
+    {{ link.name }}
+  </a>
+</nav>
+
+<router-outlet></router-outlet>

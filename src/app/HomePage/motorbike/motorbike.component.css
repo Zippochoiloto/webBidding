@@ -1,0 +1,13 @@
+.Dashboard {
+    list-style-type: none;
+    display: flex;
+}
+
+li{
+    padding-right: 10px;
+}
+
+body{
+    display: flex;
+    
+}

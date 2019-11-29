@@ -31,3 +31,13 @@ export class RegisterForm{
   walet: number;
   role: string;
 }
+
+export class HomePageRoute {
+  name: string;
+  route: string;
+}
+
+export class ApartmentPageRoute {
+  name: string;
+  route: string;
+}

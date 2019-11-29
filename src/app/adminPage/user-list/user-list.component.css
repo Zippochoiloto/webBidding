@@ -3,8 +3,15 @@
   text-align: center;
 }
 
-.body {
-  align-items: center;
+body {
+  /* text-align: center; */
+  padding-left:50px;
+
+}
+
+body .filterAndAdd{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* table{
@@ -23,7 +30,6 @@ table {
   border-collapse: collapse;
   /* width: 100%; */
   min-width: 1000px;
-  align-items: center;
 }
 
 th.mat-sort-header-sorted {
@@ -36,4 +42,10 @@ tr:hover {
 
 th{
     background-color: lightblue;
+}
+
+button{
+  padding-top:0px;
+  padding-bottom: 0px;
+  height: 40px;
 }
