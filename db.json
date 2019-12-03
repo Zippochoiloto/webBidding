@@ -10,12 +10,29 @@
       "id": 3
     }
   ],
-  "comments": [
+  "productList": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
+        "id": 1,
+        "productName": "Ô tô Vinfast",
+        "description":"Xe đẹp",
+        "productImage": "https://dungxehoi.com/wp-content/uploads/2018/12/o-to-vinfast-lux-a2-0-9-1.jpg",
+        "Category": "Ô tô",
+        "pricestart": "5000",
+        "startTime": "15:00:00",
+        "endTime": "18:00:00",
+        "status": "Sold"
+        },
+        {
+          "id": 2,
+          "productName": "Nhà Vinfast",
+          "description":"Nhà đẹp",
+          "productImage": "https://file4.batdongsan.com.vn/crop/350x232/2019/06/07/20190607102140-0cab_wm.jpg",
+          "Category": "Nhà",
+          "pricestart": "7000",
+          "startTime": "15:00:00",
+          "endTime": "18:00:00",
+          "status": "Avaiable"
+          }
   ],
   "profile": {
     "name": "typicode"

@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { Sort, MatSortModule } from "@angular/material/sort";
-import { UserList, ProductList } from "src/app/data";
+import { UserList } from "src/app/data";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatDialog } from "@angular/material";
 import { DialogEditProductComponent } from 'src/app/dialog/dialog-edit-product/dialog-edit-product.component';
 import { ConfirmDeleteComponent } from 'src/app/dialog/confirm-delete/confirm-delete.component';
-
+import { productList } from 'src/app/data-Model/data-model';
+import { PostsService } from "src/app/posts.service";
 
 @Component({
   selector: 'app-product-list',
@@ -53,16 +54,16 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  onDelete(id) {
-    ProductList.splice(id, 1);
-    const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
-      width: "300px"
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        alert("Deleted");
-        this.dataSource = new MatTableDataSource(ProductList);
-      }
-    });
-  }
+  // onDelete(id) {
+  //   ProductList.splice(id, 1);
+  //   const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
+  //     width: "300px"
+  //   });
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     if (result) {
+  //       alert("Deleted");
+  //       this.dataSource = new MatTableDataSource(ProductList);
+  //     }
+  //   });
+  // }
 }

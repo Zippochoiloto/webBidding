@@ -4,28 +4,32 @@ export const UserList: userList[] = [
   
 ];
 
-export const ProductList: productList[] = [
-  {
-    id: 1,
-  Name: "Ô tô Vinfast",
-  Category:"Car",
-  Price: 20000,
-  Quantity: 2,
-  },
-  {
-    id: 2,
-  Name: "Xe Máy Vinfast",
-  Category:"Motobike",
-  Price: 20000,
-  Quantity: 2,
-  },
-  {
-    id: 3,
-  Name: "Nhà VinHome",
-  Category:"Apartment",
-  Price: 50000,
-  Quantity: 1,
-  }];
+// export const ProductList: productList[] = [
+//   {
+//   id: 1;
+//   productName: "Ô tô Vinfast";
+//   description:"string";
+//   productImage: string;
+//   Category: string;
+//   pricestart: number;
+//   startTime: Date;
+//   endTime: Date;
+//   status: boolean;
+//   },
+//   {
+//     id: 2,
+//   Name: "Xe Máy Vinfast",
+//   Category:"Motobike",
+//   Price: 20000,
+//   Quantity: 2,
+//   },
+//   {
+//     id: 3,
+//   Name: "Nhà VinHome",
+//   Category:"Apartment",
+//   Price: 50000,
+//   Quantity: 1,
+//   }];
 
 export const Dashboard: Section[] = [
   {

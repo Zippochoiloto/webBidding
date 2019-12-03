@@ -10,11 +10,15 @@ export class userList {
 
 export class productList {
   id: number;
-  Name: string;
-  Category:string;
-  Price: number;
-  Quantity: number;
-
+  productName: string;
+  description:string;
+  productImage: string;
+  Category: string;
+  pricestart: number;
+  startTime: Date;
+  endTime: Date;
+  status: boolean;
+  
 }
 
 export class Section {
