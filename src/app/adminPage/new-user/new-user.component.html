@@ -1,85 +1,89 @@
+<div class="form-container">
+  <body>
+    <div [formGroup]="profileForm" class="form">
+      <div class="Name">
+        <label>
+          First Name:
+        </label>
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="text"
+            formControlName="fisrtName"
+          />
+        </mat-form-field>
 
-<header>
-  <h2>Register New User</h2>
-</header>
-<body>
-  <div [formGroup]="profileForm" class="form">
-    <label>
-      First Name:
-    </label>
-    <mat-form-field>
-      <input
-        class="form-control form-control-sm"
-        matInput
-        type="text"
-        formControlName="firstName"
-      />
-    </mat-form-field>
+        <label>
+          Last Name:
+        </label>
 
-    <label>
-      Last Name:
-    </label>
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="text"
+            formControlName="lastName"
+          />
+        </mat-form-field>
+      </div>
 
-    <mat-form-field>
-      <input
-        class="form-control form-control-sm"
-        matInput
-        type="text"
-        formControlName="lastName"
-      />
-    </mat-form-field>
+      <label>
+        Email:
+      </label>
 
-    <label>
-      Email:
-    </label>
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="email"
+        />
+        <mat-error *ngIf="profileForm.get('email')"> Email invalid</mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <input
-        class="form-control form-control-sm"
-        matInput
-        type="text"
-        formControlName="email"
-      />
-      <mat-error *ngIf="profileForm.get('email')"> Email invalid</mat-error>
-    </mat-form-field>
+      <label>
+        Phone:
+      </label>
 
-    <label>
-      Phone:
-    </label>
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="Phone"
+        />
+      </mat-form-field>
 
-    <mat-form-field>
-      <input
-        class="form-control form-control-sm"
-        matInput
-        type="text"
-        formControlName="Phone"
-      />
-    </mat-form-field>
+      <label>
+        Wallet:
+      </label>
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="Wallet"
+        />
+      </mat-form-field>
 
-    <label>
-      Wallet:
-    </label>
-    <mat-form-field>
-      <input
-        class="form-control form-control-sm"
-        matInput
-        type="text"
-        formControlName="wallet"
-      />
-    </mat-form-field>
+      <label>
+        Role:
+      </label>
+      <mat-form-field>
+        <mat-select placeholder="Choose Role" formControlName="role">
+          <mat-option value="User">User</mat-option>
+          <mat-option value="Admin">Admin</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <label>
-      Role:
-    </label>
-    <mat-form-field>
-      <mat-select placeholder="Choose Role">
-        <mat-option value="User">User</mat-option>
-        <mat-option value="Admin">Admin</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <button type="submit" (click)="onSubmit()" [disabled]="!profileForm.valid">
-      Submit
-    </button>
-  </div>
-</body>
+      <button
+        type="submit"
+        (click)="onSubmit()"
+        [disabled]="!profileForm.valid"
+      >
+        Submit
+      </button>
+    </div>
+  </body>
+</div>

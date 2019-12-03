@@ -49,3 +49,7 @@ button{
   padding-bottom: 0px;
   height: 40px;
 }
+
+mat-icon {
+  padding-right: 40px;
+}

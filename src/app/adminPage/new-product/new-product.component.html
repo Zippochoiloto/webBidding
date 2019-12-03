@@ -1,0 +1,68 @@
+<div class="form-container">
+    <body>
+      <div [formGroup]="profileForm" class="form">
+          <label>
+            Name:
+          </label>
+          <mat-form-field>
+            <input
+              class="form-control form-control-sm"
+              matInput
+              type="text"
+              formControlName="Name"
+            />
+          </mat-form-field>
+  
+          <label>
+            Category:
+          </label>
+  
+          <mat-form-field>
+            <input
+              class="form-control form-control-sm"
+              matInput
+              type="text"
+              formControlName="Category"
+            />
+          </mat-form-field>
+
+  
+        <label>
+            Price:
+        </label>
+  
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="number"
+            formControlName="Price"
+          />
+        </mat-form-field>
+  
+        <label>
+            Quantity:
+        </label>
+  
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="number"
+            formControlName="Quantity"
+          />
+        </mat-form-field>
+  
+        
+  
+        <button
+          type="submit"
+          (click)="onSubmit()"
+          [disabled]="!profileForm.valid"
+        >
+          Submit
+        </button>
+      </div>
+    </body>
+  </div>
+  

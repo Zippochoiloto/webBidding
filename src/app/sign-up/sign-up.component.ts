@@ -5,18 +5,22 @@ import { RegisterForm } from "src/app/data-Model/data-model";
 import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-log-in",
-  templateUrl: "./log-in.component.html",
-  styleUrls: ["./log-in.component.css"]
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css']
 })
-export class LogInComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   constructor(private fb: FormBuilder,private router: Router) {}
 
   ngOnInit() {}
 
   profileForm = this.fb.group({
+    firstName: ["", Validators.required],
+    lastName: ["", Validators.required],
+    password: ["", Validators.required],
+    confirmPassword: ["", Validators.required],
     email: ["", [Validators.required, Validators.email]],
-    password: ["", Validators.required]
+    Phone: ["", ]
   });
 
   get f() {
@@ -33,4 +37,9 @@ export class LogInComponent implements OnInit {
     this.profileForm.get("email").setValue("");
     this.profileForm.get("password").setValue("");
   }
+
+  checkConfirm(){
+    this.profileForm.get("confirmPassword") === this.profileForm.get("Password")
+  }
+
 }

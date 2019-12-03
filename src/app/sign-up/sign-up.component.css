@@ -1,16 +1,16 @@
 
 header {
-    padding-top: 100px;
-    padding-left: 60px;
+    padding-top: 10px;
+    padding-left: 40px;
     padding-right: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
     max-width: 500px;
     font-size: 25px;
     /* text-align: center; */
 }
 
 body{
-    padding:30px;
+    padding:10px;
     margin-left: 30px;
     max-width: 300px;
 
@@ -29,10 +29,7 @@ body .form-group{
     /* border: 1px solid rgb(209, 192, 192) */
 }
 
-.mat-form-field-appearance-legacy .mat-form-field-infix {
-    height: 50px;
-    padding: 0px;
-}
+
 
 label {
     margin: 0px;
@@ -46,7 +43,6 @@ input{
 
 mat-form-field{
     max-width: 400px;
-    
 }
 button{
     background-color: blue;
@@ -70,11 +66,20 @@ html{
 
 div.submitButton {
     display:flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding-bottom: 10px;
 }
 
 #signUp{
     text-decoration: underline;
     cursor: pointer;
+}
+
+.form-wrapper body mat-form-field{
+    padding: 0px;
+}
+
+mat-form-field{
+    border-top-width: 0px;
+
 }

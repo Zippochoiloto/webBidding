@@ -1,4 +1,3 @@
-<!-- <img src="https://www.safransdumonde.com/images/Safrans/Nos-creations/Themes/Croisieres/Slide-how/Slide-how-theme-croisieres-1.jpg"> -->
 <html>
   <div class="form-wrapper">
     <header>
@@ -6,6 +5,36 @@
     </header>
     <body>
       <div [formGroup]="profileForm" class="form-group">
+        <label>
+          Fisrt Name:
+        </label>
+
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="text"
+            formControlName="firstName"
+          />
+          <mat-error *ngIf="profileForm.get('firstName')">
+            First Name invalid</mat-error
+          >
+        </mat-form-field>
+        <label>
+          Last Name:
+        </label>
+
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="text"
+            formControlName="lastName"
+          />
+          <mat-error *ngIf="profileForm.get('lastName')">
+            Last Name invalid</mat-error
+          >
+        </mat-form-field>
         <label>
           Email:
         </label>
@@ -19,10 +48,10 @@
           />
           <mat-error *ngIf="profileForm.get('email')"> Email invalid</mat-error>
         </mat-form-field>
-
         <label>
           Password:
         </label>
+
         <mat-form-field>
           <input
             class="form-control form-control-sm"
@@ -34,8 +63,22 @@
             Password invalid</mat-error
           >
         </mat-form-field>
+        <label>
+          Phone:
+        </label>
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="text"
+            formControlName="Phone"
+          />
+        </mat-form-field>
+
         <div class="submitButton">
-          <mat-checkbox color="primary">Remember Me</mat-checkbox>
+          <div id="signUp" routerLink="/logIn">
+            Already have account? Log In
+          </div>
           <button
             type="submit"
             (click)="onSubmit()"
@@ -44,11 +87,6 @@
             Submit
           </button>
         </div>
-        <div id = "signUp" routerLink = "/signUp">
-            Do not have account? Sign Up
-
-        </div>
-        
       </div>
     </body>
   </div>

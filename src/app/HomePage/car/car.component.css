@@ -1,13 +1,37 @@
 .Dashboard {
-    list-style-type: none;
-    display: flex;
+  list-style-type: none;
+  display: flex;
+  font-size: 30px;
 }
 
-li{
-    padding-right: 10px;
+li {
+  padding-right: 10px;
+}
+
+body {
+  display: flex;
+}
+
+.mat-list-base .mat-list-item {
+  cursor: pointer;
+}
+
+ul{
+ list-style-type: none;   
+ display: flex;
+ justify-content: space-around;
+ padding: 20px;
+}
+
+.card-body-button{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 body{
-    display: flex;
-    
+  background-image: url(https://s3.envato.com/files/247451692/4.%20Preview%20Image.jpg);
+  height: 100vh;
+  background-size:cover ;
+  width:100%;
 }

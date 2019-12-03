@@ -1,0 +1,67 @@
+<h1 mat-dialog-title>Hi {{ data.Name1 }}</h1>
+<div mat-dialog-content>
+  <div [formGroup]="profileForm" class="form">
+    <div class="Name">
+      <label>
+        Name:
+      </label>
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="Name"
+          placeholder="{{ data.Name1 }}"
+        />
+      </mat-form-field>
+
+      <label>
+        Category:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="Category"
+          placeholder="{{ data.Category1 }}"
+        />
+      </mat-form-field>
+    </div>
+
+    <label>
+      Email:
+    </label>
+
+    <mat-form-field>
+      <input
+        class="form-control form-control-sm"
+        matInput
+        type="text"
+        formControlName="Price"
+        placeholder="{{ data.Price1 }}"
+      />
+    </mat-form-field>
+
+    <label>
+      Quantity:
+    </label>
+
+    <mat-form-field>
+      <input
+        class="form-control form-control-sm"
+        matInput
+        type="text"
+        formControlName="Quantity"
+        placeholder="{{ data.Quantity1 }}"
+      />
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.Quantity1" cdkFocusInitial>
+    Ok
+  </button>
+</div>

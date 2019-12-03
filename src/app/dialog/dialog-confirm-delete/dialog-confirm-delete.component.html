@@ -1,0 +1,94 @@
+
+  <h1 mat-dialog-title>Hi {{data.email1}}</h1>
+  <div mat-dialog-content>
+      <div [formGroup]="profileForm" class="form">
+          <div class="Name">
+            <label>
+              First Name:
+            </label>
+            <mat-form-field>
+              <input
+                class="form-control form-control-sm"
+                matInput
+                type="text"
+                formControlName="fisrtName"
+                value = "{{data.fisrtName1}}"
+              /> 
+              
+            </mat-form-field>
+    
+            <label>
+              Last Name:
+            </label>
+    
+            <mat-form-field>
+              <input
+                class="form-control form-control-sm"
+                matInput
+                type="text"
+                formControlName="lastName"
+                value= {{data.lastName1}}
+              />
+            </mat-form-field>
+          </div>
+    
+          <label>
+            Email:
+          </label>
+    
+          <mat-form-field>
+            <input
+              class="form-control form-control-sm"
+              matInput
+              type="text"
+              formControlName="email"
+              value= {{data.email1}}
+            />
+            <mat-error *ngIf="profileForm.get('email')"> Email invalid</mat-error>
+          </mat-form-field>
+    
+          <label>
+            Phone:
+          </label>
+    
+          <mat-form-field>
+            <input
+              class="form-control form-control-sm"
+              matInput
+              type="text"
+              formControlName="Phone"
+              value= {{data.Phone1}}
+            />
+            {{data.Phone1}}
+          </mat-form-field>
+    
+          <label>
+            Wallet:
+          </label>
+          <mat-form-field>
+            <input
+              class="form-control form-control-sm"
+              matInput
+              type="text"
+              formControlName="Wallet"
+              value= {{data.Wallet1}}
+            />
+          </mat-form-field>
+    
+          <label>
+            Role:
+          </label>
+          <mat-form-field>
+            <mat-select value= {{data.role1}}>
+              <mat-option value="User">User</mat-option>
+              <mat-option value="Admin">Admin</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+
+        </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button (click)= "onYesClick()" [mat-dialog-close]="data.email1" cdkFocusInitial>Ok</button>
+  </div>

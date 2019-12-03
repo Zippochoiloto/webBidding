@@ -1,10 +1,20 @@
 export class userList {
   id: number;
-  name: string;
+  fisrtName: string;
+  lastName:string;
   email: string;
   Wallet: number;
   Phone: number;
   role: string;
+}
+
+export class productList {
+  id: number;
+  Name: string;
+  Category:string;
+  Price: number;
+  Quantity: number;
+
 }
 
 export class Section {

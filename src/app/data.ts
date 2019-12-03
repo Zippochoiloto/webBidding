@@ -1,47 +1,31 @@
-import { userList, Section, HomePageRoute, ApartmentPageRoute } from "./data-Model/data-model";
+import { userList, Section, HomePageRoute, ApartmentPageRoute, productList } from "./data-Model/data-model";
 
 export const UserList: userList[] = [
+  
+];
+
+export const ProductList: productList[] = [
   {
     id: 1,
-    name: "Nguyen Van A",
-    email: "Anguyen@gmail.com",
-    Wallet: 3000,
-    Phone: 1111111,
-    role: "User"
+  Name: "Ô tô Vinfast",
+  Category:"Car",
+  Price: 20000,
+  Quantity: 2,
   },
   {
     id: 2,
-    name: "Nguyen Van B",
-    email: "Bnguyen@gmail.com",
-    Wallet: 5000,
-    Phone: 1111111,
-    role: "User"
+  Name: "Xe Máy Vinfast",
+  Category:"Motobike",
+  Price: 20000,
+  Quantity: 2,
   },
   {
     id: 3,
-    name: "Nguyen Van C",
-    email: "Cnguyen@gmail.com",
-    Wallet: 7000,
-    Phone: 1111111,
-    role: "User"
-  },
-  {
-    id: 4,
-    name: "Nguyen Van D",
-    email: "Dnguyen@gmail.com",
-    Wallet: 1000,
-    Phone: 1111111,
-    role: "User"
-  },
-  {
-    id: 5,
-    name: "Admin",
-    email: "admin@gmail.com",
-    Wallet: 2000,
-    Phone: 1111111,
-    role: "Admin"
-  }
-];
+  Name: "Nhà VinHome",
+  Category:"Apartment",
+  Price: 50000,
+  Quantity: 1,
+  }];
 
 export const Dashboard: Section[] = [
   {
