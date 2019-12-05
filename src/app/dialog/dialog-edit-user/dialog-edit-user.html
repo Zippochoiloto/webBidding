@@ -1,21 +1,21 @@
-<h1 mat-dialog-title>Edit Product Info</h1>
+<h1 mat-dialog-title>Hi {{data.email1}}</h1>
 <div mat-dialog-content>
   <div [formGroup]="profileForm" class="form">
     <div class="Name">
       <label>
-        Product Name:
+        First Name:
       </label>
       <mat-form-field>
         <input
           class="form-control form-control-sm"
           matInput
           type="text"
-          formControlName="productName"
+          formControlName="fisrtName"
         />
       </mat-form-field>
 
       <label>
-        Description:
+        Last Name:
       </label>
 
       <mat-form-field>
@@ -23,13 +23,13 @@
           class="form-control form-control-sm"
           matInput
           type="text"
-          formControlName="description"
+          formControlName="lastName"
         />
       </mat-form-field>
     </div>
 
     <label>
-      Product Image:
+      Email:
     </label>
 
     <mat-form-field>
@@ -37,12 +37,13 @@
         class="form-control form-control-sm"
         matInput
         type="text"
-        formControlName="productImage"
+        formControlName="email"
       />
+      <mat-error *ngIf="profileForm.get('email')"> Email invalid</mat-error>
     </mat-form-field>
 
     <label>
-      Category:
+      Phone:
     </label>
 
     <mat-form-field>
@@ -50,62 +51,29 @@
         class="form-control form-control-sm"
         matInput
         type="text"
-        formControlName="Category"
+        formControlName="Phone"
       />
     </mat-form-field>
 
     <label>
-      Price Start:
+      Wallet:
     </label>
-
     <mat-form-field>
       <input
         class="form-control form-control-sm"
         matInput
         type="text"
-        formControlName="priceStart"
+        formControlName="Wallet"
       />
     </mat-form-field>
 
-    
     <label>
-      Start Time:
+      Role:
     </label>
-
     <mat-form-field>
-      <input
-        class="form-control form-control-sm"
-        matInput
-        type="text"
-        formControlName="startTime"
-      />
-    </mat-form-field>
-
-
-    <div>
-      <label>
-        End Time:
-      </label>
-  
-      <mat-form-field>
-        <input
-          class="form-control form-control-sm"
-          matInput
-          type="text"
-          formControlName="endTime"
-        />
-      </mat-form-field>
-    </div>
-    
-
-    <label>
-      Status:
-    </label>
-
-    <mat-form-field>
-      <mat-select formControlName="status">
-        <mat-option value="Sold">Sold</mat-option>
-        <mat-option value="Avaiable">Avaiable</mat-option>
+      <mat-select formControlName="role">
+        <mat-option value="User">User</mat-option>
+        <mat-option value="Admin">Admin</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
@@ -115,7 +83,7 @@
   <button
     mat-button
     (click)="onYesClick()"
-    [mat-dialog-close]="data.status1"
+    [mat-dialog-close]="data.email1"
     cdkFocusInitial
   >
     Ok

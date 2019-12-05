@@ -7,6 +7,8 @@
     display: flex;
     justify-content: flex-start;
     height: 100%;
+    background-image: url(https://s3.envato.com/files/247451692/4.%20Preview%20Image.jpg);
+    background-size:cover ;
 }
 
 .list{
@@ -27,7 +29,8 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    background-color: burlywood;
+    font-size: 15px;
+    /* background-color: burlywood; */
     
 }
 
@@ -79,3 +82,11 @@ mat-list-item:hover {
     padding-top: 20px;
     cursor: pointer;
 }
+
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }

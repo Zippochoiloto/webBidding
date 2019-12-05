@@ -1,6 +1,6 @@
 import { Component, OnInit,ViewChild ,ElementRef} from '@angular/core';
 import {MatTabsModule} from '@angular/material/tabs';
-import { homePage } from 'src/app/data';
+import { homePage } from 'src/app/data-container/data';
 import { DOCUMENT } from '@angular/common'; 
 import {CommonModule} from '@angular/common'
 import { NgModule } from '@angular/core'

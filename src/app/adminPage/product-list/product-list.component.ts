@@ -1,69 +1,85 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { Sort, MatSortModule } from "@angular/material/sort";
-import { UserList } from "src/app/data";
+import { UserList } from "src/app/data-container/data";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatDialog } from "@angular/material";
-import { DialogEditProductComponent } from 'src/app/dialog/dialog-edit-product/dialog-edit-product.component';
-import { ConfirmDeleteComponent } from 'src/app/dialog/confirm-delete/confirm-delete.component';
-import { productList } from 'src/app/data-Model/data-model';
-import { PostsService } from "src/app/posts.service";
+import { DialogEditProductComponent } from "src/app/dialog/dialog-edit-product/dialog-edit-product.component";
+import { ConfirmDeleteComponent } from "src/app/dialog/confirm-delete/confirm-delete.component";
+import { productList } from "src/app/data-container/data-model";
+import { PostsService } from "src/app/http-service";
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: "app-product-list",
+  templateUrl: "./product-list.component.html",
+  styleUrls: ["./product-list.component.css"]
 })
 export class ProductListComponent implements OnInit {
-
-  constructor(public dialog: MatDialog) { }
+  productList1 = new Array();
+  constructor(public dialog: MatDialog, private postsService: PostsService) {}
 
   ngOnInit() {
+    this.postsService.getProd().subscribe(data => {
+      this.productList1 = Object.values(data);
+      this.dataSource = new MatTableDataSource(this.productList1);
+    });
   }
   displayedColumns: string[] = [
     "id",
     "Name",
     "Category",
+    "Description",
     "Price",
-    "Quantity",
     "Action"
   ];
 
-  dataSource = new MatTableDataSource(ProductList);
+  dataSource = new MatTableDataSource(this.productList1);
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openDialog(id,Name,  Category, Price, Quantity): void {
+  openDialog(id, productName, description, productImage, Category,priceStart,startTime,endTime,status): void {
     const dialogRef = this.dialog.open(DialogEditProductComponent, {
       width: "300px",
       data: {
         id1: id,
-        Name1: Name,
+        productName1: productName,
+        description1: description,
+        productImage1: productImage,
         Category1: Category,
-        Price1: Price,
-        Quantity1: Quantity
-
+        priceStart1: priceStart,
+        startTime1:startTime,
+        endTime1:endTime,
+        status1:status
       }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         alert("Product edited");
+        this.postsService.getProd().subscribe(data => {
+          this.productList1 = Object.values(data);
+          this.dataSource = new MatTableDataSource(this.productList1);
+        });
       }
     });
   }
 
-  // onDelete(id) {
-  //   ProductList.splice(id, 1);
-  //   const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
-  //     width: "300px"
-  //   });
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     if (result) {
-  //       alert("Deleted");
-  //       this.dataSource = new MatTableDataSource(ProductList);
-  //     }
-  //   });
-  // }
+  onDelete(id) {
+    // ProductList.splice(id, 1);
+    const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
+      width: "300px"
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        alert("Deleted");
+        this.postsService.deleteProd(id + 1).subscribe(data => {
+          this.postsService.getProd().subscribe(data => {
+            this.productList1 = Object.values(data);
+            this.dataSource = new MatTableDataSource(this.productList1);
+          });
+        });
+      }
+    });
+  }
 }

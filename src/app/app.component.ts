@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { PostsService } from './posts.service';
+import { PostsService } from './http-service';
 import { Subscription } from 'rxjs';
 
 @Component({

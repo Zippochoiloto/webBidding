@@ -29,30 +29,26 @@ body .form-group{
     /* border: 1px solid rgb(209, 192, 192) */
 }
 
-.mat-form-field-appearance-legacy .mat-form-field-infix {
-    height: 50px;
-    padding: 0px;
-}
+
 
 label {
     margin: 0px;
 }
 
 input{
-    padding-top: 0px;
-    padding-bottom: 0px;
-    
+
+    min-width: 300px;
 }
 
 mat-form-field{
-    max-width: 400px;
+    min-width: 300px;
     
 }
 button{
     background-color: blue;
     color: black;
     cursor: pointer;
-    max-width: 100px;
+    min-width: 100px;
     text-align: center;
 }
 
@@ -72,9 +68,16 @@ div.submitButton {
     display:flex;
     justify-content: space-between;
     padding-bottom: 10px;
+    min-width: 300px;
 }
 
 #signUp{
     text-decoration: underline;
     cursor: pointer;
 }
+
+div mat-form-field{
+    display:flex;
+    justify-content: space-between;
+}
+

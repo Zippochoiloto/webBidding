@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { RegisterForm } from "src/app/data-Model/data-model";
+import { RegisterForm } from "src/app/data-container/data-model";
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,8 +15,8 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {}
 
   profileForm = this.fb.group({
-    firstName: ["", Validators.required],
-    lastName: ["", Validators.required],
+    firstName: ["", [Validators.required, Validators.pattern("[a-zA-Z ]*")]],
+    lastName: ["", [Validators.required, Validators.pattern("[a-zA-Z ]*")]],
     password: ["", Validators.required],
     confirmPassword: ["", Validators.required],
     email: ["", [Validators.required, Validators.email]],

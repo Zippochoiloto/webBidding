@@ -1,7 +1,10 @@
 <ul class="header">
-    <li><h2 routerLink="/home" class ="Title">Web Bidding.com</h2></li>
-    <li class="comment">Best bidding website</li>
-  </ul>
+  <li><h2 routerLink="/home" class="Title">
+    
+    Web Bidding.com
+  </h2></li>
+  <li class="comment">Best Bidding website</li>
+</ul>
 <mat-toolbar class="navBar">
   <span class="AdminPanel" routerLink="/admin"> Admin Panel</span>
   <div class="rightNavBar">
@@ -12,10 +15,7 @@
 
 <div class="body">
   <mat-list>
-    <div class="Dashboard">
-      <mat-icon mat-list-icon>menu</mat-icon>
-      <span>Dash Board</span>  
-    </div>
+
 
     <mat-list-item *ngFor="let value of dashBoard">
       <mat-icon mat-list-icon>subdirectory_arrow_right</mat-icon>
@@ -23,6 +23,8 @@
     </mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
+
+  
   <div>
     <router-outlet></router-outlet>
   </div>

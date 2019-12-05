@@ -5,67 +5,81 @@
       <h4 mat-line>Dash board</h4>
     </mat-list-item>
     <mat-list-item>
-      <mat-icon mat-list-icon>arrow_forward</mat-icon>
-      <h4 mat-line>Riverside</h4>
+      <mat-checkbox
+        color="primary"
+        (change)="rangeunder1000Change()"
+        [(ngModel)]="checked1"
+        [disabled]="disabled1"
+        >0 - 1000$</mat-checkbox
+      >
     </mat-list-item>
     <mat-list-item>
-      <mat-icon mat-list-icon>arrow_forward</mat-icon>
-      <h4 mat-line>Time City</h4>
+      <mat-checkbox
+        color="primary"
+        (change)="range1000To3000Change()"
+        [(ngModel)]="checked2"
+        [disabled]="disabled2"
+        >1000 - 3000$</mat-checkbox
+      >
     </mat-list-item>
     <mat-list-item>
-      <mat-icon mat-list-icon>arrow_forward</mat-icon>
-      <h4 mat-line>Royal City</h4>
+      <mat-checkbox
+        color="primary"
+        (change)="rangeMore3000Change()"
+        [(ngModel)]="checked3"
+        [disabled]="disabled3"
+      >
+        > 3000$</mat-checkbox
+      >
     </mat-list-item>
     <mat-divider></mat-divider>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input
+            type="text"
+            placeholder="Find Product"
+            aria-label="Number"
+            matInput
+            [formControl]="myControl"
+            [matAutocomplete]="auto"
+          />
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-optgroup>
+              <mat-option *ngFor="let option of options" [value]="option">
+                {{ option }}
+              </mat-option>
+            </mat-optgroup>
+          </mat-autocomplete>
+        </mat-form-field>
+        <mat-icon mat-list-icon (click)="onSearch()">search</mat-icon>
+      </form>
   </mat-list>
 
   <ul>
-    <li>
+    <li *ngFor="let item of productList1">
       <div class="card" style="width: 18rem;">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSReVMYOurR2cj1qXFLRYMs59FllIm4FixfUiXIj_1c2wWLSquf0Q&s"
+          src="{{ item.productImage }}"
           class="card-img-top"
-          alt="..."
+          alt="https://cdn5.vectorstock.com/i/1000x1000/73/49/404-error-page-not-found-miss-paper-with-white-vector-20577349.jpg"
         />
         <div class="card-body">
-          <h5 class="card-title">Căn hộ 1 phòng khách, 2 phòng ngủ, 1 phòng bếp,1 phòng vệ sinh</h5>
+          <h5 class="card-title">
+            {{ item.productName }}
+          </h5>
           <p class="card-text">
-            Diện tích căn hộ: 100m2
+            {{ item.description }}
           </p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Giá hiện tại: 1.800 triệu</li>
-          <li class="list-group-item">Status: Còn Hàng</li>
-          <li class="list-group-item">Giá mua luôn: 2.200 triệu</li>
+          <li class="list-group-item">Giá Khởi Điểm{{ item.priceStart }}</li>
+          <li class="list-group-item">Status: {{ item.status }}</li>
+          <li class="list-group-item">Giá mua luôn: {{ item.priceStart }}</li>
         </ul>
         <div class="card-body-button">
           <button type="button" class="btn btn-primary">Đấu giá</button>
           <button type="button" class="btn btn-success">Mua luôn</button>
         </div>
-      </div>
-    </li>
-    <li>
-      <div class="card" style="width: 18rem;">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSReVMYOurR2cj1qXFLRYMs59FllIm4FixfUiXIj_1c2wWLSquf0Q&s"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Căn hộ 1 phòng khách, 3 phòng ngủ, 1 phòng bếp,2 phòng vệ sinh</h5>
-          <p class="card-text">
-            Diện tích căn hộ: 150m2
-          </p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Giá hiện tại: 2.500 triệu</li>
-          <li class="list-group-item">Status: Còn Hàng</li>
-          <li class="list-group-item">Giá mua luôn: 3.000 triệu</li>
-        </ul>
-        <div class="card-body-button">
-            <button type="button" class="btn btn-primary">Đấu giá</button>
-            <button type="button" class="btn btn-success">Mua luôn</button>
-          </div>
       </div>
     </li>
   </ul>

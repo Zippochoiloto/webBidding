@@ -6,7 +6,7 @@ import {
 } from "@angular/material/dialog";
 import { UserListComponent } from "../../adminPage/user-list/user-list.component";
 import { MatFormFieldModule } from "@angular/material/form-field";
-import { RegisterForm } from "src/app/data-Model/data-model";
+import { RegisterForm } from "src/app/data-container/data-model";
 import { ProductListComponent } from "src/app/adminPage/product-list/product-list.component";
 
 @Component({

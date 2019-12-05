@@ -1,4 +1,4 @@
-import { userList, Section, HomePageRoute, ApartmentPageRoute, productList } from "./data-Model/data-model";
+import { userList, Section, HomePageRoute, ApartmentPageRoute, productList } from "./data-model";
 
 export const UserList: userList[] = [
   

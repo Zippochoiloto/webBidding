@@ -1,68 +1,109 @@
 <div class="form-container">
-    <body>
-      <div [formGroup]="profileForm" class="form">
-          <label>
-            Name:
-          </label>
-          <mat-form-field>
-            <input
-              class="form-control form-control-sm"
-              matInput
-              type="text"
-              formControlName="Name"
-            />
-          </mat-form-field>
-  
-          <label>
-            Category:
-          </label>
-  
-          <mat-form-field>
-            <input
-              class="form-control form-control-sm"
-              matInput
-              type="text"
-              formControlName="Category"
-            />
-          </mat-form-field>
+  <body>
+    <div class="title">
+      <h2>Add new Product</h2>
+    </div>
+    <div [formGroup]="profileForm" class="form">
+      <label>
+        Product Name:
+      </label>
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="productName"
+        />
+      </mat-form-field>
 
-  
-        <label>
-            Price:
-        </label>
-  
-        <mat-form-field>
-          <input
-            class="form-control form-control-sm"
-            matInput
-            type="number"
-            formControlName="Price"
-          />
-        </mat-form-field>
-  
-        <label>
-            Quantity:
-        </label>
-  
-        <mat-form-field>
-          <input
-            class="form-control form-control-sm"
-            matInput
-            type="number"
-            formControlName="Quantity"
-          />
-        </mat-form-field>
-  
-        
-  
-        <button
-          type="submit"
-          (click)="onSubmit()"
-          [disabled]="!profileForm.valid"
-        >
-          Submit
-        </button>
-      </div>
-    </body>
-  </div>
-  
+      <label>
+        Description:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="description"
+        />
+      </mat-form-field>
+
+      <label>
+        Product Image:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="string"
+          formControlName="productImage"
+        />
+      </mat-form-field>
+
+      <label>
+        Category:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="string"
+          formControlName="Category"
+        />
+      </mat-form-field>
+
+      <label>
+        Price Start:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="number"
+          formControlName="priceStart"
+        />
+      </mat-form-field>
+
+      <label>
+        Start Time:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="startTime"
+        />
+      </mat-form-field>
+
+      <label>
+        End Time:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="endTime"
+        />
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="onSubmit()"
+        [disabled]="!profileForm.valid"
+        routerLink="/admin"
+      >
+        Submit
+      </button>
+    </div>
+  </body>
+</div>

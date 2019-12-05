@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { RegisterForm } from "src/app/data-Model/data-model";
+import { RegisterForm } from "src/app/data-container/data-model";
 import { Router } from '@angular/router';
 
 @Component({

@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { RegisterForm } from "src/app/data-Model/data-model";
+import { RegisterForm } from "src/app/data-container/data-model";
+import { PostsService } from 'src/app/http-service';
 
 @Component({
   selector: "app-new-product",
@@ -9,21 +10,25 @@ import { RegisterForm } from "src/app/data-Model/data-model";
   styleUrls: ["./new-product.component.css"]
 })
 export class NewProductComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private postsService: PostsService) {}
 
   ngOnInit() {}
 
   profileForm = this.fb.group({
-    Name: ["", Validators.required],
+    // id: ["", Validators.required],
+    productName: ["", Validators.required],
+    description: ["", Validators.required],
+    productImage: [""],
     Category: ["", Validators.required],
-    Price: ["", Validators.required],
-    Quantity: ["", Validators.required]
+    priceStart: ["", Validators.required],
+    startTime: ["", Validators.required],
+    endTime: ["", Validators.required],
+    status: ["Avaiable", Validators.required],
   });
 
   onSubmit() {
-    this.profileForm.get("Name").setValue("");
-    this.profileForm.get("Category").setValue("");
-    this.profileForm.get("Price").setValue("");
-    this.profileForm.get("Quantity").setValue("");
+    this.postsService.createProd(this.profileForm.value).subscribe(data =>{
+
+    })
   }
 }

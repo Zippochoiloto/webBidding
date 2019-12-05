@@ -1,6 +1,7 @@
 .header{
     display: flex;
     justify-content: space-between;
+
     list-style-type: none;
     background-image: url("image/header.jpg");
     color: orange;
@@ -13,4 +14,3 @@
 .header .Title{
     cursor: pointer;
 }
-

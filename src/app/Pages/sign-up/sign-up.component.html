@@ -79,7 +79,11 @@
           <div id="signUp" routerLink="/logIn">
             Already have account? Log In
           </div>
+          
+
           <button
+            mat-raised-button
+            color="primary"
             type="submit"
             (click)="onSubmit()"
             [disabled]="!profileForm.valid"

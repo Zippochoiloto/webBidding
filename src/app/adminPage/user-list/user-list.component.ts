@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild, Inject } from "@angular/core";
 import { Sort, MatSortModule } from "@angular/material/sort";
-import { UserList } from "src/app/data";
+import { UserList } from "src/app/data-container/data";
 import { MatSort } from "@angular/material/sort";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatDialog } from "@angular/material";
-import { DialogConfirmDeleteComponent } from "src/app/dialog/dialog-confirm-delete/dialog-confirm-delete.component";
-import { userList } from "src/app/data-Model/data-model";
+import { DialogConfirmDeleteComponent } from "src/app/dialog/dialog-edit-user/dialog-edit-user";
+import { userList } from "src/app/data-container/data-model";
 import { ConfirmDeleteComponent } from "src/app/dialog/confirm-delete/confirm-delete.component";
-import { PostsService } from "src/app/posts.service";
+import { PostsService } from "src/app/http-service";
 
 @Component({
   selector: "app-user-list",
@@ -24,7 +24,6 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  
   displayedColumns: string[] = [
     "id",
     "First Name",
@@ -49,14 +48,18 @@ export class UserListComponent implements OnInit {
         fisrtName1: fisrtName,
         lastName1: lastName,
         email1: email,
-        Wallet1: wallet,
         Phone1: phone,
+        Wallet1: wallet,
         role1: role
       }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         alert("User edited");
+        this.postsService.getPost().subscribe(data => {
+          this.userList1 = Object.values(data);
+          this.dataSource = new MatTableDataSource(this.userList1);
+        });
       }
     });
   }
@@ -67,18 +70,17 @@ export class UserListComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
       width: "300px"
     });
-    
+
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         alert("Deleted");
         // this.dataSource = new MatTableDataSource(UserList);
-        this.postsService.deleteUser(id+1).subscribe(data => {
-          // this.userList1 = Object.values(data);
-          // this.dataSource = new MatTableDataSource(this.userList1);
-          console.log(data)
+        this.postsService.deleteUser(id + 1).subscribe(data => {
+          this.postsService.getPost().subscribe(data => {
+            this.userList1 = Object.values(data);
+            this.dataSource = new MatTableDataSource(this.userList1);
+          });
         });
-        location.reload()
-        // this.ngOnInit()
       }
     });
   }

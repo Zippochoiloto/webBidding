@@ -1,32 +1,39 @@
 <div class="form-container">
   <body>
+    <div class="title">
+      <h2>Add new User</h2>
+    </div>
     <div [formGroup]="profileForm" class="form">
-      <div class="Name">
-        <label>
-          First Name:
-        </label>
-        <mat-form-field>
-          <input
-            class="form-control form-control-sm"
-            matInput
-            type="text"
-            formControlName="fisrtName"
-          />
-        </mat-form-field>
+      <label>
+        First Name:
+      </label>
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="fisrtName"
+        />
+        <mat-error *ngIf="profileForm.get('fisrtName')"
+          >First Name invalid</mat-error
+        >
+      </mat-form-field>
 
-        <label>
-          Last Name:
-        </label>
+      <label>
+        Last Name:
+      </label>
 
-        <mat-form-field>
-          <input
-            class="form-control form-control-sm"
-            matInput
-            type="text"
-            formControlName="lastName"
-          />
-        </mat-form-field>
-      </div>
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="lastName"
+        />
+        <mat-error *ngIf="profileForm.get('lastName')"
+          >Last Name invalid</mat-error
+        >
+      </mat-form-field>
 
       <label>
         Email:
@@ -50,9 +57,10 @@
         <input
           class="form-control form-control-sm"
           matInput
-          type="text"
+          type="number"
           formControlName="Phone"
         />
+        <mat-error *ngIf="profileForm.get('Phone')"> Phone invalid</mat-error>
       </mat-form-field>
 
       <label>
@@ -62,7 +70,7 @@
         <input
           class="form-control form-control-sm"
           matInput
-          type="text"
+          type="number"
           formControlName="Wallet"
         />
       </mat-form-field>
@@ -77,13 +85,10 @@
         </mat-select>
       </mat-form-field>
 
-      <button
-        type="submit"
-        (click)="onSubmit()"
-        [disabled]="!profileForm.valid"
-      >
-        Submit
-      </button>
+      <button mat-raised-button color="primary" type="submit"
+          (click)="onSubmit()"
+          [disabled]="!profileForm.valid"
+          routerLink = "/admin">Submit</button>
     </div>
   </body>
 </div>

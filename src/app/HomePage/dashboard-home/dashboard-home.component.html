@@ -1,11 +1,86 @@
 <body>
-  Ra đời vào năm 2019, WebBidding.com là website hàng đầu và đầu tiên cung cấp
-  nền tảng mua sắm xuyên biên giới theo khu vực tại Đông Nam Á. Chúng tôi nỗ lực
-  hướng tới dịch vụ hoàn hảo trong khi tập trung hơn vào các nhu cầu địa phương
-  để phát triển các dịch vụ mới phù hợp hơn tới tất cả các khách hàng. Mục tiêu
-  của chúng tôi là trở thành một điểm đến online được ưa thích đối với việc đấu
-  giá trực tuyến xuyên biên giới cho tất cả các loại sản phẩm như thời trang, đồ
-  trang trí nội thất, sức khỏe và làm đẹp, các dụng cụ thể thao và đồ điện tử.
-  WebBidding.com cung cấp một trải nghiệm đấu giá online tiện lợi bằng việc cung cấp các
-  sản phẩm đến từ tập đoàn Vin Group
+  <mat-list>
+    <mat-list-item>
+      <mat-icon mat-list-icon>menu</mat-icon>
+      <h4 mat-line>Price</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-checkbox
+        color="primary"
+        (change)="rangeunder1000Change()"
+        [(ngModel)]="checked1"
+        [disabled]="disabled1"
+        >0 - 1000$</mat-checkbox
+      >
+    </mat-list-item>
+    <mat-list-item>
+      <mat-checkbox
+        color="primary"
+        (change)="range1000To3000Change()"
+        [(ngModel)]="checked2"
+        [disabled]="disabled2"
+        >1000 - 3000$</mat-checkbox
+      >
+    </mat-list-item>
+    <mat-list-item>
+      <mat-checkbox
+        color="primary"
+        (change)="rangeMore3000Change()"
+        [(ngModel)]="checked3"
+        [disabled]="disabled3"
+      >
+        > 3000$</mat-checkbox
+      >
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input
+          type="text"
+          placeholder="Find Product"
+          aria-label="Number"
+          matInput
+          [formControl]="myControl"
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-optgroup>
+            <mat-option *ngFor="let option of options" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-optgroup>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-icon mat-list-icon (click)="onSearch()">search</mat-icon>
+    </form>
+  </mat-list>
+  <ul>
+    <li *ngFor="let item of productList1">
+      <div class="card" style="width: 18rem;">
+        <img
+          src="{{ item.productImage }}"
+          class="card-img-top"
+          alt="https://cdn5.vectorstock.com/i/1000x1000/73/49/404-error-page-not-found-miss-paper-with-white-vector-20577349.jpg"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ item.productName }}
+          </h5>
+          <p class="card-text">
+            {{ item.description }}
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Giá Khởi Điểm{{ item.priceStart }}</li>
+          <li class="list-group-item">Status: {{ item.status }}</li>
+          <li class="list-group-item">Giá mua luôn: {{ item.priceStart }}</li>
+        </ul>
+        <div class="card-body-button">
+          <button type="button" class="btn btn-primary">Đấu giá</button>
+          <button type="button" class="btn btn-success">Mua luôn</button>
+        </div>
+      </div>
+    </li>
+  </ul>
 </body>
