@@ -1,10 +1,16 @@
-
 <ul class="header">
-  <li><h2 routerLink="/home" class ="Title">Web Bidding.com</h2></li>
-  <li class="comment"><button mat-raised-button color="primary" routerLink = "/logIn">Sign In</button></li>
+  <li><h2 routerLink="/home" class="Title">Web Bidding.com</h2></li>
+  <li class="comment">
+    <button mat-raised-button color="primary" routerLink="/logIn">
+      Sign In
+    </button>
+    <button mat-raised-button color="primary" routerLink="/signUp">
+      Sign Up
+    </button>
+  </li>
 </ul>
 
-<nav mat-tab-nav-bar class = "navBar">
+<nav mat-tab-nav-bar class="navBar">
   <a
     mat-tab-link
     *ngFor="let link of navLinks"
@@ -17,4 +23,26 @@
   </a>
 </nav>
 
+<!-- <img src = "https://fintechnews.ch/wp-content/uploads/2019/06/Smart-City-Fintech.jpg"> -->
 <router-outlet></router-outlet>
+<div class="footer">
+  <div class="firstColumn">
+    <div class="phone">
+      <i class="fas fa-phone"></i>
+      <span> (+84) 12.345.678</span>
+    </div>
+    <div class="mail">
+      <i class="fas fa-envelope"></i>
+      <span> VinID@gmail.com</span>
+    </div>
+  </div>
+  <div class = "secondColumn">
+    <div>
+        <span>Địa chỉ: Tập đoàn Vingroup số 7 Đường Bằng Lăng 1, Việt Hưng, Quận Long Biên, Hà Nội</span> 
+
+    </div>
+      <div>
+          Mã số doanh nghiệp: 0108372860. Ngày cấp: 23/07/2018. Nơi cấp: Phòng đăng ký kinh doanh - thành phố Hà Nội
+      </div>
+  </div>
+</div>

@@ -72,13 +72,14 @@
           </p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Giá Khởi Điểm{{ item.priceStart }}</li>
-          <li class="list-group-item">Status: {{ item.status }}</li>
-          <li class="list-group-item">Giá mua luôn: {{ item.priceStart }}</li>
+          <li class="list-group-item">Giá Khởi Điểm: {{ item.priceStart| currency:'USD' }}</li>
+          <li class="list-group-item">Giá Hiện Tại: 4000.00$</li>
+          <li class="list-group-item">Status: <span [ngClass]="{'btn-danger': item.status == 'Sold','btn-normal': item.status == 'Avaiable'}">{{ item.status }}</span> </li>
+          <li class="list-group-item">Giá mua luôn: 7000.00$</li>
         </ul>
         <div class="card-body-button">
-          <button type="button" class="btn btn-primary">Đấu giá</button>
-          <button type="button" class="btn btn-success">Mua luôn</button>
+          <button type="button" (click) = "openBidDialog()"class="btn btn-primary">Đấu giá</button>
+          <button type="button" (click) = "openBuyDialog()"class="btn btn-success">Mua luôn</button>
         </div>
       </div>
     </li>

@@ -33,6 +33,8 @@ import { DialogEditProductComponent } from './dialog/dialog-edit-product/dialog-
 import { ConfirmDeleteComponent } from './dialog/confirm-delete/confirm-delete.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { BiddingComponent } from './dialog/bidding/bidding.component';
+import { BuyComponent } from './dialog/buy/buy.component';
 
 
 
@@ -57,6 +59,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     NewProductComponent,
     DialogEditProductComponent,
     ConfirmDeleteComponent,
+    BiddingComponent,
+    BuyComponent,
  
   
     
@@ -79,6 +83,6 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
   ],
   providers: [PostsService,],
   bootstrap: [AppComponent],
-  entryComponents: [DialogConfirmDeleteComponent,DialogEditProductComponent,ConfirmDeleteComponent],
+  entryComponents: [DialogConfirmDeleteComponent,DialogEditProductComponent,ConfirmDeleteComponent,BuyComponent,BiddingComponent],
 })
 export class AppModule { }

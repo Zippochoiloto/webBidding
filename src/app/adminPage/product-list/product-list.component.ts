@@ -30,6 +30,7 @@ export class ProductListComponent implements OnInit {
     "Category",
     "Description",
     "Price",
+    "Picture",
     "Action"
   ];
 

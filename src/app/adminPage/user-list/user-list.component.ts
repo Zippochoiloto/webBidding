@@ -55,7 +55,7 @@ export class UserListComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        alert("User edited");
+        // alert("User edited");
         this.postsService.getPost().subscribe(data => {
           this.userList1 = Object.values(data);
           this.dataSource = new MatTableDataSource(this.userList1);

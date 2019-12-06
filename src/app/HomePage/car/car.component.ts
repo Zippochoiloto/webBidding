@@ -8,6 +8,7 @@ import { FormControl } from "@angular/forms";
   templateUrl: './car.component.html',
   styleUrls: ['./car.component.css']
 })
+
 export class CarComponent implements OnInit {
   checked1: boolean = false;
   checked2: boolean = false;

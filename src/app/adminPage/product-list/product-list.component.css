@@ -4,9 +4,10 @@
   }
   
   body {
-    /* text-align: center; */
-    padding-left:50px;
-  
+    text-align: center;
+    padding-left:100px;
+    padding-right:100px;
+    min-width: 800px;
   }
   
   body .filterAndAdd{
@@ -16,20 +17,22 @@
   
   /* table{
       margin :auto;
-      /* padding: 10px; */
-  /* text-align: center; */
+      padding: 10px;
+   text-align: center;} */
   
   tr {
       padding-left: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
     margin-right: 20px;
+    border: 0.5px ridge #170302;
   }
   
   table {
     border-collapse: collapse;
     /* width: 100%; */
     min-width: 1000px;
+    padding: 20px;
   }
   
   th.mat-sort-header-sorted {
@@ -48,8 +51,14 @@
     padding-top:0px;
     padding-bottom: 0px;
     height: 40px;
+    margin: 15px;
   }
   
   mat-icon {
     padding-right: 40px;
   }
+
+  /* body .table1 table .Picture { 
+    max-height: 30px;
+    max-width: 30px;
+  } */

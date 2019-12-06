@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { PostsService } from "src/app/http-service";
 import { FormControl } from "@angular/forms";
+import { MatDialog } from "@angular/material";
+import { BuyComponent } from "src/app/dialog/buy/buy.component";
+import { BiddingComponent } from "src/app/dialog/bidding/bidding.component";
 
 @Component({
   selector: "app-dashboard-home",
@@ -17,17 +20,18 @@ export class DashboardHomeComponent implements OnInit {
   disabled3: boolean = false;
 
   myControl = new FormControl();
-  options : string[];
-  constructor(private postsService: PostsService) {}
+  options: string[];
+  options1: string[];
+  constructor(private postsService: PostsService, public dialog: MatDialog) {}
   productList1 = new Array();
   // productListFilter = new Array();
   ngOnInit() {
     this.postsService.getProd().subscribe(data => {
       this.productList1 = Object.values(data);
       this.options = [
-        ...this.productList1.map(x => {
-          return x.productName;
-        })
+        ...new Set(this.productList1.map(x => {
+          return x.Category;
+        }))
       ];
     });
   }
@@ -80,7 +84,7 @@ export class DashboardHomeComponent implements OnInit {
   onSearch() {
     if (this.myControl.value) {
       this.productList1 = this.productList1.filter(x => {
-        return x.productName == this.myControl.value;
+        return x.Category == this.myControl.value;
       });
     } else {
       this.postsService.getProd().subscribe(data => {
@@ -88,5 +92,30 @@ export class DashboardHomeComponent implements OnInit {
       });
     }
   }
-  
+
+  openBuyDialog(): void {
+    const dialogRef = this.dialog.open(BuyComponent, {
+      width: "300px"
+      // data: {
+      //   price1: "7000"
+      // }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+      }
+    });
+  }
+
+  openBidDialog(): void {
+    const dialogRef = this.dialog.open(BiddingComponent, {
+      width: "300px"
+      // data: {
+      //   price1: "7000"
+      // }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+      }
+    });
+  }
 }

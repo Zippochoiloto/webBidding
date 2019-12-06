@@ -56,3 +56,17 @@ body form > mat-icon{
 body > mat-list{
   height: 1000px;
 }
+.btn-danger {
+  background: red;
+  padding: 5px;
+  color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.btn-normal{
+  background: green;
+  padding: 5px;
+  color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
