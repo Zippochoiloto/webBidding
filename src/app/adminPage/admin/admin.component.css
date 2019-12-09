@@ -74,12 +74,13 @@ mat-list-item:hover {
 }
 
 .header .comment {
-  padding: 25px 20px;
+  padding:  20px;
 }
 
 .header .Title {
-  padding-top: 20px;
+  padding-top: 10px;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 
 .example-icon {

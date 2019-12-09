@@ -1,9 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { AboutComponent } from "./HomePage/about/about.component";
 import { HomeComponent } from "./HomePage/home/home.component";
 import { AdminComponent } from "./adminPage/admin/admin.component";
-import { DashBoardComponent } from "./adminPage/dash-board/dash-board.component";
 import { UserListComponent } from "./adminPage/user-list/user-list.component";
 import { NewUserComponent } from "./adminPage/new-user/new-user.component";
 import { PageNotFoundComponent } from "./Pages/page-not-found/page-not-found.component";
@@ -15,6 +13,8 @@ import { LogInComponent } from './Pages/log-in/log-in.component';
 import { SignUpComponent } from './Pages/sign-up/sign-up.component';
 import { ProductListComponent } from './adminPage/product-list/product-list.component';
 import { NewProductComponent } from './adminPage/new-product/new-product.component';
+import { UserProfileComponent } from './HomePage/user-profile/user-profile.component';
+import { ShoppingCartComponent } from './HomePage/shopping-cart/shopping-cart.component';
 
 
 {CarComponent}
@@ -25,11 +25,12 @@ const routes: Routes = [
     path: "home",
     component: HomeComponent,
     children: [
-      { path: "about", component: AboutComponent },
+      { path: "userProfile", component: UserProfileComponent },
       { path: "", component: DashboardHomeComponent },
       { path: "car", component: CarComponent },
       { path: "apartment", component: ApartmentComponent },
       { path: "motorbike", component: MotorbikeComponent },
+      { path: "shoppingCart", component: ShoppingCartComponent },
     ]
   },
   { path: "logIn", component: LogInComponent },

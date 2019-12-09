@@ -16,10 +16,12 @@ import { PostsService } from "src/app/http-service";
 })
 export class UserListComponent implements OnInit {
   userList1 = new Array();
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
   constructor(public dialog: MatDialog, private postsService: PostsService) {}
   ngOnInit() {
     this.postsService.getPost().subscribe(data => {
       this.userList1 = Object.values(data);
+      this.dataSource.sort = this.sort;
       this.dataSource = new MatTableDataSource(this.userList1);
     });
   }

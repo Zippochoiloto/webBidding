@@ -1,23 +1,26 @@
 <div class="form-container">
   <body>
     <div class="title">
-      <h2>Add new Product</h2>
+      <h2>Your Profile</h2>
     </div>
     <div [formGroup]="profileForm" class="form">
       <label>
-        Product Name:
+        First Name:
       </label>
       <mat-form-field>
         <input
           class="form-control form-control-sm"
           matInput
           type="text"
-          formControlName="productName"
+          formControlName="fisrtName"
         />
+        <mat-error *ngIf="profileForm.get('fisrtName')"
+          >First Name invalid</mat-error
+        >
       </mat-form-field>
 
       <label>
-        Description:
+        Last Name:
       </label>
 
       <mat-form-field>
@@ -25,38 +28,29 @@
           class="form-control form-control-sm"
           matInput
           type="text"
-          formControlName="description"
+          formControlName="lastName"
         />
+        <mat-error *ngIf="profileForm.get('lastName')"
+          >Last Name invalid</mat-error
+        >
       </mat-form-field>
 
       <label>
-        Product Image:
+        Email:
       </label>
 
       <mat-form-field>
         <input
           class="form-control form-control-sm"
           matInput
-          type="string"
-          formControlName="productImage"
+          type="text"
+          formControlName="email"
         />
+        <mat-error *ngIf="profileForm.get('email')"> Email invalid</mat-error>
       </mat-form-field>
 
       <label>
-        Category:
-      </label>
-
-      <mat-form-field>
-        <input
-          class="form-control form-control-sm"
-          matInput
-          type="string"
-          formControlName="Category"
-        />
-      </mat-form-field>
-
-      <label>
-        Price Start:
+        Phone:
       </label>
 
       <mat-form-field>
@@ -64,48 +58,24 @@
           class="form-control form-control-sm"
           matInput
           type="number"
-          formControlName="priceStart"
+          formControlName="Phone"
         />
+        <mat-error *ngIf="profileForm.get('Phone')"> Phone invalid</mat-error>
       </mat-form-field>
 
       <label>
-        Buy Price:
+        Wallet:
       </label>
-
       <mat-form-field>
         <input
           class="form-control form-control-sm"
           matInput
           type="number"
-          formControlName="buyPrice"
+          formControlName="Wallet"
         />
       </mat-form-field>
 
-      <label>
-        Start Time:
-      </label>
-
-      <mat-form-field>
-        <input
-          class="form-control form-control-sm"
-          matInput
-          type="text"
-          formControlName="startTime"
-        />
-      </mat-form-field>
-
-      <label>
-        End Time:
-      </label>
-
-      <mat-form-field>
-        <input
-          class="form-control form-control-sm"
-          matInput
-          type="text"
-          formControlName="endTime"
-        />
-      </mat-form-field>
+      
 
       <button
         mat-raised-button
@@ -113,7 +83,6 @@
         type="submit"
         (click)="onSubmit()"
         [disabled]="!profileForm.valid"
-        routerLink="/admin"
       >
         Submit
       </button>

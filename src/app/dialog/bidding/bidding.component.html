@@ -1,24 +1,21 @@
 <span mat-dialog-title>Your wallet value: 10000$</span>
-<span mat-dialog-title>Current Price: 4000$</span>
+<span mat-dialog-title>Current Price: {{data.price1}}</span>
 <span mat-dialog-title>Min value to bid: 4200$</span>
 <div [formGroup]="profileForm" class="form">
-    <label>
-        Money to bid:
-    </label>
-    <mat-form-field>
-      <input
-        class="form-control form-control-sm"
-        matInput
-        type="number"
-        formControlName="price"
-        
-      />
-      <mat-error *ngIf="profileForm.get('price')"
-        >Price invalid</mat-error
-      >
-    </mat-form-field>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="1">Ok</button>
+  <label>
+    Money to bid:
+  </label>
+  <mat-form-field>
+    <input
+      class="form-control form-control-sm"
+      matInput
+      type="number"
+      formControlName="price"
+    />
+    <mat-error *ngIf="profileForm.get('price')">Price invalid</mat-error>
+  </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="1">Ok</button>
+  </div>
 </div>
-

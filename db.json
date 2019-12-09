@@ -71,6 +71,15 @@
       "Wallet": 345,
       "role": "Admin",
       "id": 8
+    },
+    {
+      "fisrtName": "hhaaha",
+      "lastName": "hoho",
+      "email": "a@gmail.com",
+      "Phone": 1234,
+      "Wallet": 3123,
+      "role": "User",
+      "id": 9
     }
   ],
   "prodList": [
@@ -81,6 +90,8 @@
       "productImage": "https://dungxehoi.com/wp-content/uploads/2018/12/o-to-vinfast-lux-a2-0-9-1.jpg",
       "Category": "Ô tô",
       "priceStart": "1000",
+      "buyPrice": "10000",
+
       "startTime": "15:00:00",
       "endTime": "18:00:00",
       "status": "Avaiable"
@@ -92,6 +103,8 @@
       "productImage": "https://file4.batdongsan.com.vn/crop/350x232/2019/06/07/20190607102140-0cab_wm.jpg",
       "Category": "Nhà",
       "priceStart": "2000",
+      "buyPrice": "15000",
+
       "startTime": "16:00:00",
       "endTime": "18:00:00",
       "status": "Sold"
@@ -103,11 +116,12 @@
       "productImage": "https://slimweb.vn/site/xe-may-dien-vinfast-klara/images/user/887/xemaykalara.png",
       "Category": "Xe máy",
       "priceStart": "4000",
+      "buyPrice": "18000",
+
       "startTime": "15:00:00",
       "endTime": "18:00:00",
       "status": "Sold"
     },
-
     {
       "id": 4,
       "productName": "Xe máy Klara 2",
@@ -115,11 +129,12 @@
       "productImage": "https://slimweb.vn/site/xe-may-dien-vinfast-klara/images/user/887/xemaykalara.png",
       "Category": "Xe máy",
       "priceStart": "4000",
+      "buyPrice": "7000",
+
       "startTime": "15:00:00",
       "endTime": "18:00:00",
       "status": "Avaiable"
     },
-
     {
       "id": 5,
       "productName": "Nhà VinHomes 2",
@@ -127,11 +142,12 @@
       "productImage": "https://file4.batdongsan.com.vn/crop/350x232/2019/06/07/20190607102140-0cab_wm.jpg",
       "Category": "Nhà",
       "priceStart": "3000",
+      "buyPrice": "8000",
+
       "startTime": "16:00:00",
       "endTime": "18:00:00",
       "status": "Sold"
     },
-
     {
       "id": 6,
       "productName": "Nhà VinHomes 3",
@@ -139,11 +155,12 @@
       "productImage": "https://file4.batdongsan.com.vn/crop/350x232/2019/06/07/20190607102140-0cab_wm.jpg",
       "Category": "Nhà",
       "priceStart": "3500",
+      "buyPrice": "9000",
+
       "startTime": "16:00:00",
       "endTime": "18:00:00",
       "status": "Avaiable"
     },
-
     {
       "id": 7,
       "productName": "Ô tô Vinfast 2",
@@ -152,12 +169,59 @@
       "Category": "Ô tô",
       "priceStart": "1500",
       "startTime": "15:00:00",
+      "buyPrice": "10000",
       "endTime": "18:00:00",
       "status": "Avaiable"
+      
     }
-
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "auctionHistory": [{
+    "id": 1,
+    "productsId": 1,
+    "usersId":1,
+    "biddingPrice": "3000",
+    "timeToBid": "19:00:00"
+  },
+  {
+    "id": 2,
+    "productsId": 2,
+    "usersId":2,
+    "biddingPrice": "4000",
+    "timeToBid": "19:00:00"
+  },
+  {
+    "id": 3,
+    "productsId": 3,
+    "usersId":3,
+    "biddingPrice": "5000",
+    "timeToBid": "19:00:00"
+  },
+  {
+    "id": 4,
+    "productsId": 4,
+    "usersId":4,
+    "biddingPrice": "4000",
+    "timeToBid": "19:00:00"
+  },
+  {
+    "id": 5,
+    "productsId": 5,
+    "usersId":5,
+    "biddingPrice": "3000",
+    "timeToBid": "19:00:00"
+  },
+  {
+    "id": 6,
+    "productsId": 6,
+    "usersId":6,
+    "biddingPrice": "4000",
+    "timeToBid": "19:00:00"
+  },
+  {
+    "id": 7,
+    "productsId": 7,
+    "usersId":7,
+    "biddingPrice": "3500",
+    "timeToBid": "19:00:00"
+  }]
 }

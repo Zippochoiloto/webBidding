@@ -21,6 +21,7 @@ export class NewProductComponent implements OnInit {
     productImage: [""],
     Category: ["", Validators.required],
     priceStart: ["", Validators.required],
+    buyPrice: ["", Validators.required],
     startTime: ["", Validators.required],
     endTime: ["", Validators.required],
     status: ["Avaiable", Validators.required],

@@ -44,10 +44,19 @@
         <td mat-cell *matCellDef="let element">{{ element.description }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="Price">
-        <th mat-header-cell *matHeaderCellDef>Price</th>
+      
+
+      <ng-container matColumnDef="Start Price">
+        <th mat-header-cell *matHeaderCellDef>Start Price</th>
         <td mat-cell *matCellDef="let element">
           {{ element.priceStart | currency: "USD" }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Buy Price">
+        <th mat-header-cell *matHeaderCellDef>Buy Price</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.buyPrice | currency: "USD" }}
         </td>
       </ng-container>
 
@@ -76,6 +85,7 @@
                 element.productImage,
                 element.Category,
                 element.priceStart,
+                element.buyPrice,
                 element.startTime,
                 element.endTime,
                 element.status

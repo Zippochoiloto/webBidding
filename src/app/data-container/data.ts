@@ -47,7 +47,7 @@ export const homePage: HomePageRoute[] = [
   { name: "Apartment", route: "/home/apartment" },
   { name: "Car", route: "/home/car" },
   { name: "Motorbike", route: "/home/motorbike" },
-  { name: "About", route: "about" }
+  { name: "User Profile", route: "userProfile" }
 ];
 
 export const apartmentPageRoute: ApartmentPageRoute[] = [

@@ -29,7 +29,8 @@ export class ProductListComponent implements OnInit {
     "Name",
     "Category",
     "Description",
-    "Price",
+    "Start Price",
+    "Buy Price",
     "Picture",
     "Action"
   ];
@@ -40,7 +41,18 @@ export class ProductListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openDialog(id, productName, description, productImage, Category,priceStart,startTime,endTime,status): void {
+  openDialog(
+    id,
+    productName,
+    description,
+    productImage,
+    Category,
+    priceStart,
+    buyPrice,
+    startTime,
+    endTime,
+    status
+  ): void {
     const dialogRef = this.dialog.open(DialogEditProductComponent, {
       width: "300px",
       data: {
@@ -50,14 +62,14 @@ export class ProductListComponent implements OnInit {
         productImage1: productImage,
         Category1: Category,
         priceStart1: priceStart,
-        startTime1:startTime,
-        endTime1:endTime,
-        status1:status
+        buyPrice1:buyPrice,
+        startTime1: startTime,
+        endTime1: endTime,
+        status1: status
       }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        alert("Product edited");
         this.postsService.getProd().subscribe(data => {
           this.productList1 = Object.values(data);
           this.dataSource = new MatTableDataSource(this.productList1);
@@ -73,7 +85,6 @@ export class ProductListComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        alert("Deleted");
         this.postsService.deleteProd(id + 1).subscribe(data => {
           this.postsService.getProd().subscribe(data => {
             this.productList1 = Object.values(data);

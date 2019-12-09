@@ -2,14 +2,14 @@
   <mat-list>
     <mat-list-item>
       <mat-icon mat-list-icon>menu</mat-icon>
-      <h4 mat-line>Dash board</h4>
+      <h4 mat-line>Price</h4>
     </mat-list-item>
     <mat-list-item>
       <mat-checkbox
         color="primary"
         (change)="rangeunder1000Change()"
         [(ngModel)]="checked1"
-        [disabled]="disabled1"
+        [disabled]="checked2 || checked3"
         >0 - 1000$</mat-checkbox
       >
     </mat-list-item>
@@ -18,7 +18,7 @@
         color="primary"
         (change)="range1000To3000Change()"
         [(ngModel)]="checked2"
-        [disabled]="disabled2"
+        [disabled]="checked1 || checked3"
         >1000 - 3000$</mat-checkbox
       >
     </mat-list-item>
@@ -27,7 +27,7 @@
         color="primary"
         (change)="rangeMore3000Change()"
         [(ngModel)]="checked3"
-        [disabled]="disabled3"
+        [disabled]="checked2 || checked1"
       >
         > 3000$</mat-checkbox
       >
@@ -56,7 +56,7 @@
   </mat-list>
 
   <ul>
-    <li *ngFor="let item of productList1">
+    <li *ngFor="let item of productList1,let i = index">
       <div class="card" style="width: 18rem;">
         <img
           src="{{ item.productImage }}"
@@ -76,11 +76,11 @@
             <li class="list-group-item">Giá Hiện Tại: 4000.00$</li>
             <li class="list-group-item">Status: <span [ngClass]="{'btn-danger': item.status == 'Sold','btn-normal': item.status == 'Avaiable'}">{{ item.status }}</span> </li>
 
-            <li class="list-group-item">Giá mua luôn: 7000.00$</li>
+            <li class="list-group-item">Giá mua luôn: {{ item.buyPrice| currency:'USD' }}</li>
         </ul>
         <div class="card-body-button">
-          <button type="button" class="btn btn-primary">Đấu giá</button>
-          <button type="button" class="btn btn-success">Mua luôn</button>
+          <button type="button" (click) = "openBidDialog(bidList1[i]?.biddingPrice)"class="btn btn-primary">Đấu giá</button>
+          <button type="button" (click) = "openBuyDialog()" class="btn btn-success">Mua luôn</button>
         </div>
       </div>
     </li>

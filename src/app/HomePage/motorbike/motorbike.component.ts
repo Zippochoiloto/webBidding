@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { PostsService } from "src/app/http-service";
 import { FormControl } from "@angular/forms";
-
+import { BuyComponent } from "src/app/dialog/buy/buy.component";
+import { BiddingComponent } from "src/app/dialog/bidding/bidding.component";
+import { MatDialog } from "@angular/material";
 
 @Component({
   selector: "app-motorbike",
@@ -13,16 +15,14 @@ export class MotorbikeComponent implements OnInit {
   checked2: boolean = false;
   checked3: boolean = false;
 
-  disabled1: boolean = false;
-  disabled2: boolean = false;
-  disabled3: boolean = false;
 
   myControl = new FormControl();
   options : string[];
 
-  constructor(private postsService: PostsService) {}
+  constructor(private postsService: PostsService,public dialog: MatDialog) {}
   productList1 = new Array();
   productList2 = new Array();
+  public bidList1 = new Array();
   // productListFilter = new Array();
   ngOnInit() {
     this.postsService.getProd().subscribe(data => {
@@ -37,18 +37,21 @@ export class MotorbikeComponent implements OnInit {
         })
       ]
     });
+
+    this.postsService.getBid().subscribe(data => {
+      this.bidList1 = Object.values(data);
+      console.log(this.bidList1[1]);
+    });
   }
 
   rangeunder1000Change() {
     if (this.checked1) {
       (this.productList1 = this.productList1.filter(x => {
         return x.priceStart <= 1000;
-      })),
-        (this.disabled2 = true),
-        (this.disabled3 = true);
+      }))
     } else {
       this.productList1 = this.productList2;
-      (this.disabled2 = false), (this.disabled3 = false);
+ 
     }
   }
 
@@ -56,12 +59,10 @@ export class MotorbikeComponent implements OnInit {
     if (this.checked2) {
       (this.productList1 = this.productList1.filter(x => {
         return x.priceStart <= 3000 && x.priceStart > 1000;
-      })),
-        (this.disabled1 = true),
-        (this.disabled3 = true);
+      }))
     } else {
       this.productList1 = this.productList2;
-      (this.disabled1 = false), (this.disabled3 = false);
+
     }
   }
 
@@ -69,13 +70,9 @@ export class MotorbikeComponent implements OnInit {
     if (this.checked3) {
       (this.productList1 = this.productList1.filter(x => {
         return x.priceStart > 3000;
-      })),
-        (this.disabled1 = true),
-        (this.disabled2 = true);
+      }))
     } else {
-      (this.productList1 = this.productList2),
-        (this.disabled2 = false),
-        (this.disabled1 = false);
+      (this.productList1 = this.productList2)
     }
   }
   onSearch() {
@@ -87,5 +84,31 @@ export class MotorbikeComponent implements OnInit {
       
         this.productList1 = this.productList2;
       };
+    }
+
+    openBuyDialog(): void {
+      const dialogRef = this.dialog.open(BuyComponent, {
+        width: "300px"
+        // data: {
+        //   price1: "7000"
+        // }
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+        }
+      });
+    }
+  
+    openBidDialog(price): void {
+      const dialogRef = this.dialog.open(BiddingComponent, {
+        width: "300px",
+        data: {
+          price1: price
+        }
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+        }
+      });
     }
 }

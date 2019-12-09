@@ -4,6 +4,8 @@ import { homePage } from 'src/app/data-container/data';
 import { DOCUMENT } from '@angular/common'; 
 import {CommonModule} from '@angular/common'
 import { NgModule } from '@angular/core'
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',

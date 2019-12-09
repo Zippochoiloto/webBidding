@@ -17,6 +17,7 @@ export interface DialogData {
   productImage1: string;
   Category1: string;
   priceStart1: number;
+  buyPrice1: number;
   startTime1: string;
   endTime1: string;
   status1: string;
@@ -48,6 +49,7 @@ export class DialogEditProductComponent implements OnInit {
     productImage: [this.data.productImage1, Validators.required],
     Category: [this.data.Category1, Validators.required],
     priceStart: [this.data.priceStart1, Validators.required],
+    buyPrice: [this.data.buyPrice1, Validators.required],
     startTime: [this.data.startTime1, Validators.required],
     endTime: [this.data.endTime1, Validators.required],
     status: [this.data.status1, Validators.required]

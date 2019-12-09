@@ -60,13 +60,16 @@ body > mat-list{
   background: red;
   padding: 5px;
   color: white;
-  border: 1px solid black;
+  border: 1px solid red;
   border-radius: 10px;
+ 
 }
 .btn-normal{
   background: green;
   padding: 5px;
   color: white;
-  border: 1px solid black;
+  border: 1px solid green;
   border-radius: 10px;
+ 
+
 }

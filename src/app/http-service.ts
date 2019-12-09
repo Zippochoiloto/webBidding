@@ -3,10 +3,10 @@ import { HttpClient } from "@angular/common/http";
 
 const URLuser = "http://localhost:3000/userList";
 const URLprod = "http://localhost:3000/prodList";
+const URLbid = "http://localhost:3000/auctionHistory";
 @Injectable({
   providedIn: "root"
 })
-
 export class PostsService {
   constructor(private http: HttpClient) {}
 
@@ -15,12 +15,12 @@ export class PostsService {
   }
 
   createUser(value) {
-    return this.http.post(URLuser,value);
-    console.log('good')
+    return this.http.post(URLuser, value);
+    console.log("good");
   }
 
-  updateUser(userId: number,value) {
-    return this.http.put(URLuser + "/" + userId,value);
+  updateUser(userId: number, value) {
+    return this.http.put(URLuser + "/" + userId, value);
   }
 
   deleteUser(userId: number) {
@@ -32,19 +32,23 @@ export class PostsService {
   }
 
   createProd(value) {
-    return this.http.post(URLprod,value);
-    console.log('good')
+    return this.http.post(URLprod, value);
+    console.log("good");
   }
 
-  updateProd(userId: number,value) {
-    return this.http.put(URLprod + "/" + userId,value);
+  updateProd(userId: number, value) {
+    return this.http.put(URLprod + "/" + userId, value);
   }
 
   deleteProd(userId: number) {
     return this.http.delete(URLprod + "/" + userId);
   }
 
-  testGet() {
-    return this.http.get('http://www.mocky.io/v2/5de7444a3700000f00092747');
+  getBid() {
+    return this.http.get(URLbid);
+  }
+
+  updateBid(Id: number, value) {
+    return this.http.put(URLbid + "/" + Id, value);
   }
 }

@@ -1,6 +1,8 @@
 <ul class="header">
-  <li><h2 routerLink="/home" class="Title">Web Bidding.com</h2></li>
+  <li><h2 routerLink="/home" class="Title">WebBidding.com</h2></li>
   <li class="comment">
+    <mat-icon matBadge="0" matBadgeColor="warn" routerLink = "/home/shoppingCart">shopping_cart</mat-icon>
+
     <button mat-raised-button color="primary" routerLink="/logIn">
       Sign In
     </button>
@@ -10,12 +12,45 @@
   </li>
 </ul>
 
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+  
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://shopgoodwillcdn.azureedge.net/assets/images/ocjewelry-1.jpg" >
+      </div>
+      <div class="carousel-item">
+        <img src="https://shopgoodwillcdn.azureedge.net/assets/images/product-bins.jpg" >
+      </div>
+      <div class="carousel-item">
+        <img src="https://shopgoodwillcdn.azureedge.net/assets/images/ocjewelry-1.jpg" >
+      </div>
+    </div>
+  
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  
+  </div>
+
 <nav mat-tab-nav-bar class="navBar">
   <a
     mat-tab-link
     *ngFor="let link of navLinks"
     [routerLink]="link.route"
-    routerLinkActive
+    routerLinkActive="active"
+    [routerLinkActiveOptions] = "{exact:true}"
     #rla="routerLinkActive"
     [active]="rla.isActive"
   >
@@ -36,13 +71,16 @@
       <span> VinID@gmail.com</span>
     </div>
   </div>
-  <div class = "secondColumn">
+  <div class="secondColumn">
     <div>
-        <span>Địa chỉ: Tập đoàn Vingroup số 7 Đường Bằng Lăng 1, Việt Hưng, Quận Long Biên, Hà Nội</span> 
-
+      <span
+        >Địa chỉ: Tập đoàn Vingroup số 7 Đường Bằng Lăng 1, Việt Hưng, Quận Long
+        Biên, Hà Nội</span
+      >
     </div>
-      <div>
-          Mã số doanh nghiệp: 0108372860. Ngày cấp: 23/07/2018. Nơi cấp: Phòng đăng ký kinh doanh - thành phố Hà Nội
-      </div>
+    <div>
+      Mã số doanh nghiệp: 0108372860. Ngày cấp: 23/07/2018. Nơi cấp: Phòng đăng
+      ký kinh doanh - thành phố Hà Nội
+    </div>
   </div>
 </div>
