@@ -1,89 +1,130 @@
 <body>
-    <mat-list>
-      <mat-list-item>
-        <mat-icon mat-list-icon>menu</mat-icon>
-        <h4 mat-line>Price</h4>
-      </mat-list-item>
-      <mat-list-item>
-        <mat-checkbox
-          color="primary"
-          (change)="rangeunder1000Change()"
-          [(ngModel)]="checked1"
-          [disabled]="checked2 || checked3"
-          >0 - 1000$</mat-checkbox
-        >
-      </mat-list-item>
-      <mat-list-item>
-        <mat-checkbox
-          color="primary"
-          (change)="range1000To3000Change()"
-          [(ngModel)]="checked2"
-          [disabled]="checked1 || checked3"
-          >1000 - 3000$</mat-checkbox
-        >
-      </mat-list-item>
-      <mat-list-item>
-        <mat-checkbox
-          color="primary"
-          (change)="rangeMore3000Change()"
-          [(ngModel)]="checked3"
-          [disabled]="checked2 || checked1"
-        >
-          > 3000$</mat-checkbox
-        >
-      </mat-list-item>
-      <mat-divider></mat-divider>
-      <form class="example-form">
-          <mat-form-field class="example-full-width">
-            <input
-              type="text"
-              placeholder="Find Product"
-              aria-label="Number"
-              matInput
-              [formControl]="myControl"
-              [matAutocomplete]="auto"
-            />
-            <mat-autocomplete #auto="matAutocomplete">
-              <mat-optgroup>
-                <mat-option *ngFor="let option of options" [value]="option">
-                  {{ option }}
-                </mat-option>
-              </mat-optgroup>
-            </mat-autocomplete>
-          </mat-form-field>
-          <mat-icon mat-list-icon (click)="onSearch()">search</mat-icon>
-        </form>
-    </mat-list>
-  
-    <ul>
-      <li *ngFor="let item of productList1,let i = index">
-        <div class="card" style="width: 18rem;">
-          <img
-            src="{{ item.productImage }}"
-            class="card-img-top"
-            alt="https://cdn5.vectorstock.com/i/1000x1000/73/49/404-error-page-not-found-miss-paper-with-white-vector-20577349.jpg"
-          />
-          <div class="card-body">
-            <h5 class="card-title">
-              {{ item.productName }}
-            </h5>
-            <p class="card-text">
+  <mat-list>
+    <mat-list-item>
+      <mat-icon mat-list-icon>menu</mat-icon>
+      <h4 mat-line>Price</h4>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-checkbox
+        color="primary"
+        (change)="rangeunder1000Change()"
+        [(ngModel)]="checked1"
+        [disabled]="checked2 || checked3"
+        >0 - 1000$</mat-checkbox
+      >
+    </mat-list-item>
+    <mat-list-item>
+      <mat-checkbox
+        color="primary"
+        (change)="range1000To3000Change()"
+        [(ngModel)]="checked2"
+        [disabled]="checked1 || checked3"
+        >1000 - 3000$</mat-checkbox
+      >
+    </mat-list-item>
+    <mat-list-item>
+      <mat-checkbox
+        color="primary"
+        (change)="rangeMore3000Change()"
+        [(ngModel)]="checked3"
+        [disabled]="checked1 || checked2"
+      >
+        > 3000$</mat-checkbox
+      >
+    </mat-list-item>
+    <mat-divider></mat-divider>
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input
+          type="text"
+          placeholder="Find Product"
+          aria-label="Number"
+          matInput
+          [formControl]="myControl"
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-optgroup>
+            <mat-option *ngFor="let option of options" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-optgroup>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-icon mat-list-icon (click)="onSearch()">search</mat-icon>
+    </form>
+  </mat-list>
+  <ul>
+    <li *ngFor="let item of productList1; let i = index">
+      <div class="card" style="width: 18rem;">
+        <img
+          routerLink="/home/detailProduct/{{ item.id }}"
+          src="{{ item.productImage }}"
+          class="card-img-top"
+          alt="https://cdn5.vectorstock.com/i/1000x1000/73/49/404-error-page-not-found-miss-paper-with-white-vector-20577349.jpg"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ item.productName }}
+          </h5>
+          <!-- <p class="card-text">
               {{ item.description }}
-            </p>
-          </div>
-          <ul class="list-group list-group-flush">
-              <li class="list-group-item">Giá Khởi Điểm: {{ item.priceStart| currency:'USD' }}</li>
-              <li class="list-group-item">Giá Hiện Tại: 4000.00$</li>
-              <li class="list-group-item">Status: <span [ngClass]="{'btn-danger': item.status == 'Sold','btn-normal': item.status == 'Avaiable'}">{{ item.status }}</span> </li>
-  
-              <li class="list-group-item">Giá mua luôn: {{ item.buyPrice| currency:'USD' }}</li>
-          </ul>
-          <div class="card-body-button">
-            <button type="button" (click) = "openBidDialog(bidList1[i]?.biddingPrice)"class="btn btn-primary">Đấu giá</button>
-            <button type="button" (click) = "openBuyDialog()" class="btn btn-success">Mua luôn</button>
-          </div>
+            </p> -->
         </div>
-      </li>
-    </ul>
-  </body>
-  
+        <ul class="list-group">
+          <li class="list-group-item">
+            Giá Khởi Điểm: {{ item.priceStart | currency: "USD" }}
+          </li>
+          <li class="list-group-item">
+            Giá Hiện Tại: {{ bidList1[i]?.biddingPrice | currency: "USD" }}
+          </li>
+          <li class="list-group-item">
+            Status:
+            <span
+              [ngClass]="{
+                'btn-danger': item.status == 'Sold',
+                'btn-normal': item.status == 'Avaiable'
+              }"
+              >{{ item.status }}</span
+            >
+          </li>
+          <li class="list-group-item">
+            Giá mua luôn: {{ item.buyPrice | currency: "USD" }}
+          </li>
+        </ul>
+        <div class="card-body-button">
+          <button
+            type="button"
+            [disabled]="item.status == 'Sold'"
+            (click)="openBidDialog(bidList1[i]?.id,
+            bidList1[i]?.productsId,
+            bidList1[i]?.usersId,
+            bidList1[i]?.biddingPrice,
+            bidList1[i]?.timeToBid)"
+            class="btn btn-primary"
+          >
+            Đấu giá
+          </button>
+          <button
+            type="button"
+            [disabled]="item.status == 'Sold'"
+            (click)="openBuyDialog(item.id,
+            item.productName,
+            item.description,
+            item.productImage,
+            item.Category,
+            item.priceStart,
+            item.buyPrice,
+            item.startTime,
+            item.endTime,
+            item.status)"
+            class="btn btn-success"
+          >
+            Mua luôn
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</body>

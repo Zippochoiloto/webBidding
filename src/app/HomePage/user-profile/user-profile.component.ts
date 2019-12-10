@@ -13,8 +13,8 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {}
 
   profileForm = this.fb.group({
-    fisrtName: ["", Validators.required],
-    lastName: ["", Validators.required],
+    fisrtName: ["", [Validators.required, Validators.pattern("[a-zA-Z ]*")]],
+    lastName: ["",[Validators.required, Validators.pattern("[a-zA-Z ]*")]],
     email: ["", [Validators.required, Validators.email]],
     Phone: ["", Validators.required],
     Wallet: [""],

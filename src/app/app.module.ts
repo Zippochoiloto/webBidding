@@ -27,6 +27,7 @@ import {
 import { CommonModule } from "@angular/common";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { SignUpComponent } from "./Pages/sign-up/sign-up.component";
+// import { JwPaginationComponent } from 'jw-angular-pagination';
 import { HttpClientModule } from "@angular/common/http";
 import { PostsService } from "./http-service";
 import { DialogConfirmDeleteComponent } from "./dialog/dialog-edit-user/dialog-edit-user";
@@ -41,6 +42,7 @@ import { BuyComponent } from "./dialog/buy/buy.component";
 import { MatTableModule } from "@angular/material/table";
 import { UserProfileComponent } from './HomePage/user-profile/user-profile.component';
 import { ShoppingCartComponent } from './HomePage/shopping-cart/shopping-cart.component';
+import { DetailProductComponent } from './HomePage/detail-product/detail-product.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import { ShoppingCartComponent } from './HomePage/shopping-cart/shopping-cart.co
     BiddingComponent,
     BuyComponent,
     UserProfileComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    DetailProductComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +86,8 @@ import { ShoppingCartComponent } from './HomePage/shopping-cart/shopping-cart.co
     MatButtonModule,
     MatAutocompleteModule,
     MatTableModule,
-    NgxImageZoomModule.forRoot()
+    NgxImageZoomModule.forRoot(),
+    // JwPaginationComponent
   ],
   providers: [PostsService],
   bootstrap: [AppComponent],

@@ -3,7 +3,9 @@ import { HttpClient } from "@angular/common/http";
 
 const URLuser = "http://localhost:3000/userList";
 const URLprod = "http://localhost:3000/prodList";
+// const URLdetail = "http://localhost:3000/detailProduct";
 const URLbid = "http://localhost:3000/auctionHistory";
+
 @Injectable({
   providedIn: "root"
 })
@@ -31,6 +33,10 @@ export class PostsService {
     return this.http.get(URLprod);
   }
 
+  getProdID(prodID: string) {
+    return this.http.get(URLprod + "/" + prodID);
+  }
+
   createProd(value) {
     return this.http.post(URLprod, value);
     console.log("good");
@@ -48,7 +54,11 @@ export class PostsService {
     return this.http.get(URLbid);
   }
 
-  updateBid(Id: number, value) {
+  getprodBid(id) {
+    return this.http.get(URLbid + "/" + id);
+  }
+
+  updateBid(Id: string, value) {
     return this.http.put(URLbid + "/" + Id, value);
   }
 }

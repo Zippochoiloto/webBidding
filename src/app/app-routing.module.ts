@@ -15,6 +15,7 @@ import { ProductListComponent } from './adminPage/product-list/product-list.comp
 import { NewProductComponent } from './adminPage/new-product/new-product.component';
 import { UserProfileComponent } from './HomePage/user-profile/user-profile.component';
 import { ShoppingCartComponent } from './HomePage/shopping-cart/shopping-cart.component';
+import { DetailProductComponent } from './HomePage/detail-product/detail-product.component';
 
 
 {CarComponent}
@@ -27,10 +28,13 @@ const routes: Routes = [
     children: [
       { path: "userProfile", component: UserProfileComponent },
       { path: "", component: DashboardHomeComponent },
+      // { path: ":id", component: DetailProductComponent },
+
       { path: "car", component: CarComponent },
       { path: "apartment", component: ApartmentComponent },
       { path: "motorbike", component: MotorbikeComponent },
       { path: "shoppingCart", component: ShoppingCartComponent },
+      { path: "detailProduct/:id", component: DetailProductComponent },
     ]
   },
   { path: "logIn", component: LogInComponent },

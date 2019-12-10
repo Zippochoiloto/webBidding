@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Section } from 'src/app/data-container/data-model';
-import { Dashboard } from 'src/app/data-container/data';
-
-
+import { Section } from "src/app/data-container/data-model";
+import { Dashboard } from "src/app/data-container/data";
 
 @Component({
   selector: "app-admin",
@@ -11,7 +9,5 @@ import { Dashboard } from 'src/app/data-container/data';
 })
 export class AdminComponent implements OnInit {
   ngOnInit() {}
-  dashBoard = Dashboard
-
-
+  dashBoard = Dashboard;
 }

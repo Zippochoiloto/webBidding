@@ -32,16 +32,15 @@ ul {
   padding: 10px;
 }
 
-body form{
-  display: flex; 
-justify-content:space-between;
+body form {
+  display: flex;
+  justify-content: space-between;
 }
 
-body form > mat-icon{
+body form > mat-icon {
   padding-top: 13px;
   cursor: pointer;
 }
-
 
 .example-form {
   min-width: 150px;
@@ -53,7 +52,7 @@ body form > mat-icon{
   width: 100%;
 }
 
-body > mat-list{
+body > mat-list {
   height: 1000px;
 }
 .btn-danger {
@@ -62,14 +61,16 @@ body > mat-list{
   color: white;
   border: 1px solid red;
   border-radius: 10px;
- 
 }
-.btn-normal{
+.btn-normal {
   background: green;
   padding: 5px;
   color: white;
   border: 1px solid green;
   border-radius: 10px;
- 
+}
 
+
+body ul li img{
+  cursor: pointer;
 }

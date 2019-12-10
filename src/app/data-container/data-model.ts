@@ -1,7 +1,7 @@
 export class userList {
   id: number;
   fisrtName: string;
-  lastName:string;
+  lastName: string;
   email: string;
   Wallet: number;
   Phone: number;
@@ -11,14 +11,25 @@ export class userList {
 export class productList {
   id: number;
   productName: string;
-  description:string;
+  description: string;
   productImage: string;
   Category: string;
   pricestart: number;
   startTime: Date;
   endTime: Date;
   status: boolean;
-  
+}
+
+export class product {
+  id: number;
+  productName: string;
+  description: string;
+  productImage: string;
+  Category: string;
+  pricestart: number;
+  startTime: string;
+  endTime: string;
+  status: boolean;
 }
 
 export class Section {
@@ -27,17 +38,15 @@ export class Section {
 }
 
 export class userAdd {
-
   constructor(
     public id: number,
     public name: string,
     public power: string,
     public alterEgo?: string
-  ) {  }
-
+  ) {}
 }
 
-export class RegisterForm{
+export class RegisterForm {
   name: string;
   password: string;
   email: string;

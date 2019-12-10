@@ -56,9 +56,10 @@
     </form>
   </mat-list>
   <ul>
-    <li *ngFor="let item of productList1;let i = index">
+    <li *ngFor="let item of productList1; let i = index">
       <div class="card" style="width: 18rem;">
         <img
+          routerLink="/home/detailProduct/{{ item.id }}"
           src="{{ item.productImage }}"
           class="card-img-top"
           alt="https://cdn5.vectorstock.com/i/1000x1000/73/49/404-error-page-not-found-miss-paper-with-white-vector-20577349.jpg"
@@ -67,19 +68,69 @@
           <h5 class="card-title">
             {{ item.productName }}
           </h5>
-          <p class="card-text">
+          <!-- <p class="card-text">
             {{ item.description }}
-          </p>
+          </p> -->
         </div>
         <ul class="list-group">
-          <li class="list-group-item">Giá Khởi Điểm: {{ item.priceStart| currency:'USD' }}</li>
-          <li class="list-group-item">Giá Hiện Tại: {{ bidList1[i]?.biddingPrice | currency:'USD' }}</li>
-          <li class="list-group-item">Status: <span [ngClass]="{'btn-danger': item.status == 'Sold','btn-normal': item.status == 'Avaiable'}">{{ item.status }}</span> </li>
-          <li class="list-group-item">Giá mua luôn: {{ item.buyPrice| currency:'USD' }}</li>
+          <li class="list-group-item">
+            Price Start: {{ item.priceStart | currency: "USD" }}
+          </li>
+          <li class="list-group-item">
+            Price Current: {{ bidList1[i]?.biddingPrice | currency: "USD" }}
+          </li>
+          <li class="list-group-item">
+            Status:
+            <span
+              [ngClass]="{
+                'btn-danger': item.status == 'Sold',
+                'btn-normal': item.status == 'Avaiable'
+              }"
+              >{{ item.status }}</span
+            >
+          </li>
+          <li class="list-group-item">
+            Buy Price: {{ item.buyPrice | currency: "USD" }}
+          </li>
         </ul>
         <div class="card-body-button">
-          <button type="button" (click) = "openBidDialog(bidList1[i]?.biddingPrice)"class="btn btn-primary">Đấu giá</button>
-          <button type="button" (click) = "openBuyDialog()"class="btn btn-success">Mua luôn</button>
+          <button
+            type="button"
+            [disabled]="item.status == 'Sold'"
+            (click)="
+              openBidDialog(
+                bidList1[i]?.id,
+                bidList1[i]?.productsId,
+                bidList1[i]?.usersId,
+                bidList1[i]?.biddingPrice,
+                bidList1[i]?.timeToBid
+              )
+            "
+            class="btn btn-primary"
+          >
+            Bidding
+          </button>
+          <button
+            type="button"
+            [disabled]="item.status == 'Sold'"
+            (click)="
+              openBuyDialog(
+                item.id,
+                item.productName,
+                item.description,
+                item.productImage,
+                item.Category,
+                item.priceStart,
+                item.buyPrice,
+                item.startTime,
+                item.endTime,
+                item.status
+              )
+            "
+            class="btn btn-success"
+          >
+            Buy
+          </button>
         </div>
       </div>
     </li>

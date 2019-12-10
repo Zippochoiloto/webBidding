@@ -16,7 +16,11 @@ import { PostsService } from "src/app/http-service";
 })
 export class UserListComponent implements OnInit {
   userList1 = new Array();
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
+
+  // items = [];
+  // pageOfItems: Array<any>;
+
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor(public dialog: MatDialog, private postsService: PostsService) {}
   ngOnInit() {
     this.postsService.getPost().subscribe(data => {
@@ -24,6 +28,7 @@ export class UserListComponent implements OnInit {
       this.dataSource.sort = this.sort;
       this.dataSource = new MatTableDataSource(this.userList1);
     });
+    // this.items = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
   }
 
   displayedColumns: string[] = [
@@ -37,6 +42,11 @@ export class UserListComponent implements OnInit {
     "Action"
   ];
   dataSource = new MatTableDataSource(UserList);
+
+//   onChangePage(pageOfItems: Array<any>) {
+//     // update current page of items
+//     this.pageOfItems = pageOfItems;
+// }
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
