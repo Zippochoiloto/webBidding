@@ -31,13 +31,13 @@
     </div>
 
     <div class="lines-button">
-      Status:
-      <span
+      <div>Status:</div>
+      <div class = "button"
         [ngClass]="{
           'btn-danger': product?.status == 'Sold',
           'btn-normal': product?.status == 'Avaiable'
         }"
-        >{{ product?.status }}</span
+        >{{ product?.status }}</div
       >
       <br />
     </div>

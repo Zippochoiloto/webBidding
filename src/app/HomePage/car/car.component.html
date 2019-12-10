@@ -74,10 +74,10 @@
         </div>
         <ul class="list-group">
           <li class="list-group-item">
-            Giá Khởi Điểm: {{ item.priceStart | currency: "USD" }}
+            Start Price: {{ item.priceStart | currency: "USD" }}
           </li>
           <li class="list-group-item">
-            Giá Hiện Tại: {{ bidList1[i]?.biddingPrice | currency: "USD" }}
+            Current Price: {{ bidList1[i]?.biddingPrice | currency: "USD" }}
           </li>
           <li class="list-group-item">
             Status:
@@ -90,7 +90,7 @@
             >
           </li>
           <li class="list-group-item">
-            Giá mua luôn: {{ item.buyPrice | currency: "USD" }}
+            Buy Price: {{ item.buyPrice | currency: "USD" }}
           </li>
         </ul>
         <div class="card-body-button">
@@ -108,7 +108,7 @@
             "
             class="btn btn-primary"
           >
-            Đấu giá
+            Bidding
           </button>
           <button
             type="button"
@@ -129,7 +129,7 @@
             "
             class="btn btn-success"
           >
-            Mua luôn
+            Buy
           </button>
         </div>
       </div>

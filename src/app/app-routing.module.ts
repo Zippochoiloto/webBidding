@@ -48,7 +48,6 @@ const routes: Routes = [
       { path: "productList", component: ProductListComponent },
       { path: "newUser", component: NewUserComponent },
       { path: "newProduct", component: NewProductComponent },
-      { path: "newUser/:id", component: NewUserComponent },
       { path: "**", component: PageNotFoundComponent }
     ]
   },

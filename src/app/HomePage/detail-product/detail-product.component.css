@@ -23,7 +23,7 @@
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .description{
@@ -52,9 +52,13 @@
     border-radius: 10px;
   }
 
-  .card-body-button {
+  .product .info .card-body-button {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     padding-left: 20px;
+  }
+
+  .product .info .lines-button .button{
+      text-align: end;
   }

@@ -3,7 +3,6 @@ import { HttpClient } from "@angular/common/http";
 
 const URLuser = "http://localhost:3000/userList";
 const URLprod = "http://localhost:3000/prodList";
-// const URLdetail = "http://localhost:3000/detailProduct";
 const URLbid = "http://localhost:3000/auctionHistory";
 
 @Injectable({
@@ -39,7 +38,6 @@ export class PostsService {
 
   createProd(value) {
     return this.http.post(URLprod, value);
-    console.log("good");
   }
 
   updateProd(userId: number, value) {

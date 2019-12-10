@@ -6,7 +6,7 @@
       "email": "asd@gmail.com",
       "Phone": "123",
       "Wallet": "432",
-      "role": "User",
+      "role": "Admin",
       "id": 1
     },
     {
@@ -117,7 +117,7 @@
       "buyPrice": "18000",
       "startTime": "15:00:00",
       "endTime": "18:00:00",
-      "status": "Avaiable"
+      "status": "Sold"
     },
     {
       "id": 4,
@@ -166,6 +166,30 @@
       "buyPrice": "10000",
       "endTime": "18:00:00",
       "status": "Avaiable"
+    },
+    {
+      "id": 8,
+      "productName": "Ô tô Vinfast 3",
+      "description": "Lux A2.0 sở hữu kích thước dài x rộng x cao là 4.973 x 1.900 x 1.464 mm và chiều dài trục cơ sở lên tới 2.968 mm. Phía trước xe, đèn pha và đèn định vị ban ngày sử dụng công nghệ LED với khả năng tự động bật/tắt và chức năng đèn chờ dẫn đường. Phía sau, đèn hậu sử dụng công nghệ LED toàn bộ.Gương xe chỉnh điện, gập điện, tự điều chỉnh khi lùi, và tích hợp đèn báo rẽ cùng tính năng sấy gương. Bánh mâm của xe có kích thước 18 inch, phanh trước sử dụng đĩa tản nhiệt, phanh sau sử dụng đĩa đặc.",
+      "productImage": "https://vcdn-vnexpress.vnecdn.net/2019/08/09/VinFast-Fadil-VnExpress-1-JPG-4316-1565323233.jpg",
+      "Category": "Ô tô",
+      "priceStart": "2500",
+      "startTime": "15:00:00",
+      "buyPrice": "15000",
+      "endTime": "18:00:00",
+      "status": "Avaiable"
+    },
+    {
+      "id": 9,
+      "productName": "Xe máy Klara 3",
+      "description": "VinFast Klara là mẫu xe máy điện đầu tiên mang thương hiệu Việt Nam, vừa được VinFast tung ra thị trường trong nước vào hồi tháng 11. Xe được bán ra thị trường với hai phiên bản là bản tiêu chuẩn A2 và bản Cao cấp A1. Hiện tại, giá xe máy điện vinfast Klara cho mỗi phiên bản không có sự thay đổi với tháng trước và có thay đổi nhẹ tùy đại lý.",
+      "productImage": "https://slimweb.vn/site/xe-may-dien-vinfast-klara/images/user/887/xemaykalara.png",
+      "Category": "Xe máy",
+      "priceStart": "3000",
+      "buyPrice": "9000",
+      "startTime": "15:00:00",
+      "endTime": "18:00:00",
+      "status": "Avaiable"
     }
   ],
   "auctionHistory": [
@@ -180,14 +204,14 @@
       "id": 2,
       "productsId": 2,
       "usersId": 2,
-      "biddingPrice": "4000",
+      "biddingPrice": "4300",
       "timeToBid": "19:00:00"
     },
     {
       "id": 3,
       "productsId": 3,
       "usersId": 3,
-      "biddingPrice": "5300",
+      "biddingPrice": "5600",
       "timeToBid": "19:00:00"
     },
     {
@@ -217,92 +241,20 @@
       "usersId": 7,
       "biddingPrice": "3500",
       "timeToBid": "19:00:00"
-    }
-  ],
-  "detailProduct": [
-    {
-      "id": 1,
-      "productName": "Ô tô Vinfast",
-      "description": "Đầu xe thiết kế thể thao, điểm nhấn với logo chữ V mạ crôm nằm chính giữa lưới tản nhiệt, kết hợp với đèn LED trang trí từ gốc chữ V vuốt ngang. Đèn pha LED đặt thấp hơn so với thông thường, tích hợp đèn LED ban ngày.Lux A2.0 sở hữu kích thước dài x rộng x cao là 4.973 x 1.900 x 1.464 mm và chiều dài trục cơ sở lên tới 2.968 mm. Phía trước xe, đèn pha và đèn định vị ban ngày sử dụng công nghệ LED với khả năng tự động bật/tắt và chức năng đèn chờ dẫn đường. Phía sau, đèn hậu sử dụng công nghệ LED toàn bộ.Gương xe chỉnh điện, gập điện, tự điều chỉnh khi lùi, và tích hợp đèn báo rẽ cùng tính năng sấy gương. Bánh mâm của xe có kích thước 18 inch, phanh trước sử dụng đĩa tản nhiệt, phanh sau sử dụng đĩa đặc.",
-      "productImage": "https://dungxehoi.com/wp-content/uploads/2018/12/o-to-vinfast-lux-a2-0-9-1.jpg",
-      "Category": "Ô tô",
-      "priceStart": "1000",
-      "buyPrice": "10000",
-      "startTime": "15:00:00",
-      "endTime": "18:00:00",
-      "status": "Avaiable"
     },
     {
-      "id": 2,
-      "productName": "Nhà VinHomes",
-      "description": "Nhà siêu sang,siêu đẹp siêu to khổng lồ",
-      "productImage": "https://file4.batdongsan.com.vn/crop/350x232/2019/06/07/20190607102140-0cab_wm.jpg",
-      "Category": "Nhà",
-      "priceStart": "2000",
-      "buyPrice": "15000",
-      "startTime": "16:00:00",
-      "endTime": "18:00:00",
-      "status": "Sold"
+      "id": 8,
+      "productsId": 8,
+      "usersId": 8,
+      "biddingPrice": "4500",
+      "timeToBid": "19:00:00"
     },
     {
-      "id": 3,
-      "productName": "Xe máy Klara",
-      "description": "Xe siêu sang,siêu đẹp siêu to khổng lồ",
-      "productImage": "https://slimweb.vn/site/xe-may-dien-vinfast-klara/images/user/887/xemaykalara.png",
-      "Category": "Xe máy",
-      "priceStart": "4000",
-      "buyPrice": "18000",
-      "startTime": "15:00:00",
-      "endTime": "18:00:00",
-      "status": "Sold"
-    },
-    {
-      "id": 4,
-      "productName": "Xe máy Klara 2",
-      "description": "Xe siêu sang,siêu đẹp siêu to khổng lồ",
-      "productImage": "https://slimweb.vn/site/xe-may-dien-vinfast-klara/images/user/887/xemaykalara.png",
-      "Category": "Xe máy",
-      "priceStart": "4000",
-      "buyPrice": "7000",
-      "startTime": "15:00:00",
-      "endTime": "18:00:00",
-      "status": "Avaiable"
-    },
-    {
-      "id": 5,
-      "productName": "Nhà VinHomes 2",
-      "description": "Nhà siêu sang,siêu đẹp siêu to khổng lồ",
-      "productImage": "https://file4.batdongsan.com.vn/crop/350x232/2019/06/07/20190607102140-0cab_wm.jpg",
-      "Category": "Nhà",
-      "priceStart": "3000",
-      "buyPrice": "8000",
-      "startTime": "16:00:00",
-      "endTime": "18:00:00",
-      "status": "Sold"
-    },
-    {
-      "id": 6,
-      "productName": "Nhà VinHomes 3",
-      "description": "Nhà siêu sang,siêu đẹp siêu to khổng lồ",
-      "productImage": "https://file4.batdongsan.com.vn/crop/350x232/2019/06/07/20190607102140-0cab_wm.jpg",
-      "Category": "Nhà",
-      "priceStart": "3500",
-      "buyPrice": "9000",
-      "startTime": "16:00:00",
-      "endTime": "18:00:00",
-      "status": "Avaiable"
-    },
-    {
-      "id": 7,
-      "productName": "Ô tô Vinfast 2",
-      "description": "Xe siêu sang,siêu đẹp siêu to khổng lồ",
-      "productImage": "https://vcdn-vnexpress.vnecdn.net/2019/08/09/VinFast-Fadil-VnExpress-1-JPG-4316-1565323233.jpg",
-      "Category": "Ô tô",
-      "priceStart": "1500",
-      "startTime": "15:00:00",
-      "buyPrice": "10000",
-      "endTime": "18:00:00",
-      "status": "Avaiable"
+      "id": 9,
+      "productsId": 9,
+      "usersId": 9,
+      "biddingPrice": "7000",
+      "timeToBid": "19:00:00"
     }
   ]
 }

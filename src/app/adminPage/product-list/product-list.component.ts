@@ -18,17 +18,10 @@ export class ProductListComponent implements OnInit {
   productList1 = new Array();
   constructor(public dialog: MatDialog, private postsService: PostsService) {}
 
-  ngOnInit() {
-    this.postsService.getProd().subscribe(data => {
-      this.productList1 = Object.values(data);
-      this.dataSource = new MatTableDataSource(this.productList1);
-    });
-  }
   displayedColumns: string[] = [
     "id",
     "Name",
     "Category",
-    "Description",
     "Start Price",
     "Buy Price",
     "Picture",
@@ -36,6 +29,15 @@ export class ProductListComponent implements OnInit {
   ];
 
   dataSource = new MatTableDataSource(this.productList1);
+
+  ngOnInit() {
+    this.postsService.getProd().subscribe(data => {
+      this.productList1 = Object.values(data);
+      this.dataSource = new MatTableDataSource(this.productList1);
+    });
+  }
+
+
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();

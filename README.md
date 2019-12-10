@@ -6,3 +6,4 @@
 2/12/2019: Tao JSON server, fake database va ket noi
 3/12/2019: Chuyen hard code html va lay data tu database
 4/12/2019: CSS table giao dien admin
+12/10/2019: Add function detail product
