@@ -1,0 +1,91 @@
+<div class="form-container">
+  <body>
+    <div class="title">
+      <h2>Your Profile</h2>
+    </div>
+    <div [formGroup]="profileForm" class="form">
+      <label>
+        First Name:
+      </label>
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="fisrtName"
+        />
+        <mat-error *ngIf="profileForm.get('fisrtName')"
+          >First Name invalid</mat-error
+        >
+      </mat-form-field>
+
+      <label>
+        Last Name:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="lastName"
+        />
+        <mat-error *ngIf="profileForm.get('lastName')"
+          >Last Name invalid</mat-error
+        >
+      </mat-form-field>
+
+      <label>
+        Email:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="email"
+        />
+        <mat-error *ngIf="profileForm.get('email')"> Email invalid</mat-error>
+      </mat-form-field>
+
+      <label>
+        Phone:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="number"
+          formControlName="Phone"
+        />
+        <mat-error *ngIf="profileForm.get('Phone')"> Phone invalid</mat-error>
+      </mat-form-field>
+
+      <label>
+        Wallet:
+      </label>
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="number"
+          formControlName="Wallet"
+        />
+      </mat-form-field>
+
+      
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="onSubmit()"
+        [disabled]="!profileForm.valid"
+      >
+        Submit
+      </button>
+    </div>
+  </body>
+</div>

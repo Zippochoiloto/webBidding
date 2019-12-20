@@ -1,0 +1,87 @@
+<div class="product">
+  <div class="image">
+    <img
+      src="{{ product?.productImage }}"
+      style="max-width: 500px;min-width: 500px;"
+      alt=""
+    />
+  </div>
+
+  <div class="info">
+    <div class="productName">{{ product?.productName }} <br /></div>
+    <div class="lines">
+      <div>Start Price:</div>
+      <div>
+        {{ product?.priceStart | currency: "USD" }}
+      </div>
+    </div>
+
+    <div class="lines">
+      <div>Current Price:</div>
+      <div>
+        {{ bid?.biddingPrice | currency: "USD" }}
+      </div>
+    </div>
+
+    <div class="lines">
+      <div>Buy Price:</div>
+      <div>
+        {{ product?.buyPrice | currency: "USD" }}
+      </div>
+    </div>
+
+    <div class="lines-button">
+      <div>Status:</div>
+      <div class = "button"
+        [ngClass]="{
+          'btn-danger': product?.status == 'Sold',
+          'btn-normal': product?.status == 'Avaiable'
+        }"
+        >{{ product?.status }}</div
+      >
+      <br />
+    </div>
+    <div class="card-body-button">
+      <button
+        type="button"
+        (click)="
+          openBidDialog(
+            bid?.id,
+            bid?.productsId,
+            bid?.usersId,
+            bid?.biddingPrice,
+            bid?.timeToBid
+          )
+        "
+        class="btn btn-primary"
+        [disabled]="product?.status == 'Sold'"
+      >
+        Đấu giá
+      </button>
+      <button
+        type="button"
+        (click)="
+          openBuyDialog(
+            product?.id,
+            product?.productName,
+            product?.description,
+            product?.productImage,
+            product?.Category,
+            product?.priceStart,
+            product?.buyPrice,
+            product?.startTime,
+            product?.endTime,
+            product?.status
+          )
+        "
+        class="btn btn-success"
+        [disabled]="product?.status == 'Sold'"
+      >
+        Mua luôn
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="description">Product Description:<br /></div>
+<div class="descriptionText">{{ product?.description }}</div>

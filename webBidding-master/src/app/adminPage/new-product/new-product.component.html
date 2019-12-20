@@ -1,0 +1,134 @@
+<div class="form-container">
+  <body>
+    <div class="title">
+      <h2>Add new Product</h2>
+    </div>
+    <div [formGroup]="profileForm" class="form">
+      <label>
+        Product Name:
+      </label>
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="productName"
+        />
+        <mat-error *ngIf="profileForm.get('productName')"
+          >Product Name invalid</mat-error
+        >
+      </mat-form-field>
+
+      <label>
+        Description:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="description"
+        />
+        <mat-error *ngIf="profileForm.get('description')"
+          >Description invalid</mat-error
+        >
+      </mat-form-field>
+
+      <label>
+        Product Image:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="string"
+          formControlName="productImage"
+        />
+        <mat-error *ngIf="profileForm.get('productImage')"
+          >Product Image invalid</mat-error
+        >
+      </mat-form-field>
+
+      <label>
+        Category:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="string"
+          formControlName="Category"
+        />
+        <mat-error *ngIf="profileForm.get('Category')"
+          >Category invalid</mat-error
+        >
+      </mat-form-field>
+
+      <label>
+        Price Start:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="number"
+          formControlName="priceStart"
+        />
+      </mat-form-field>
+
+      <label>
+        Buy Price:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="number"
+          formControlName="buyPrice"
+        />
+      </mat-form-field>
+
+      <label>
+        Start Time:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="startTime"
+        />
+      </mat-form-field>
+
+      <label>
+        End Time:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="endTime"
+        />
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="onSubmit()"
+        [disabled]="!profileForm.valid"
+        routerLink="/admin"
+      >
+        Submit
+      </button>
+    </div>
+  </body>
+</div>

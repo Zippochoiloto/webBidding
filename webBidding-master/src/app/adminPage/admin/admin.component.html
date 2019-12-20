@@ -1,0 +1,53 @@
+<ul class="header">
+  <li>
+    <h2 routerLink="/home" class="Title">
+      WebBidding.com
+    </h2>
+  </li>
+  <li class="comment">Best Bidding website</li>
+</ul>
+<mat-toolbar class="navBar">
+  <span class="AdminPanel" routerLink="/admin"> Admin Panel</span>
+  <div class="rightNavBar">
+    <span class="email"> admin@gmail.com</span>
+    <button mat-button routerLink="/home">Sign out</button>
+  </div>
+</mat-toolbar>
+
+<div class="body">
+  <mat-list>
+    <mat-list-item *ngFor="let value of dashBoard">
+      <mat-icon mat-list-icon>subdirectory_arrow_right</mat-icon>
+      <h4 mat-line routerLink="{{ value.route }}">{{ value.name }}</h4>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div class="footer">
+  <div class="firstColumn">
+    <div class="phone">
+      <i class="fas fa-phone"></i>
+      <span> (+84) 12.345.678</span>
+    </div>
+    <div class="mail">
+      <i class="fas fa-envelope"></i>
+      <span> VinID@gmail.com</span>
+    </div>
+  </div>
+  <div class="secondColumn">
+    <div>
+      <span
+        >Địa chỉ: Tập đoàn Vingroup số 7 Đường Bằng Lăng 1, Việt Hưng, Quận Long
+        Biên, Hà Nội</span
+      >
+    </div>
+    <div>
+      Mã số doanh nghiệp: 0108372860. Ngày cấp: 23/07/2018. Nơi cấp: Phòng đăng
+      ký kinh doanh - thành phố Hà Nội
+    </div>
+  </div>
+</div>

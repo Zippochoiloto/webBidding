@@ -1,0 +1,97 @@
+<html>
+  <div class="form-wrapper">
+    <header>
+      Welcome to Web Bidding
+    </header>
+    <body>
+      <div [formGroup]="profileForm" class="form-group">
+        <label>
+          Fisrt Name:
+        </label>
+
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="text"
+            formControlName="firstName"
+          />
+          <mat-error *ngIf="profileForm.get('firstName')">
+            First Name invalid</mat-error
+          >
+        </mat-form-field>
+        <label>
+          Last Name:
+        </label>
+
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="text"
+            formControlName="lastName"
+          />
+          <mat-error *ngIf="profileForm.get('lastName')">
+            Last Name invalid</mat-error
+          >
+        </mat-form-field>
+        <label>
+          Email:
+        </label>
+
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="text"
+            formControlName="email"
+          />
+          <mat-error *ngIf="profileForm.get('email')"> Email invalid</mat-error>
+        </mat-form-field>
+        <label>
+          Password:
+        </label>
+
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="password"
+            formControlName="password"
+          />
+          <mat-error *ngIf="profileForm.get('password')">
+            Password invalid</mat-error
+          >
+        </mat-form-field>
+        <label>
+          Phone:
+        </label>
+        <mat-form-field>
+          <input
+            class="form-control form-control-sm"
+            matInput
+            type="text"
+            formControlName="Phone"
+          />
+        </mat-form-field>
+
+        <div class="submitButton">
+          <div id="signUp" routerLink="/logIn">
+            Already have account? Log In
+          </div>
+          
+
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            (click)="onSubmit()"
+            [disabled]="!profileForm.valid"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </body>
+  </div>
+</html>

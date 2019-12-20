@@ -1,0 +1,91 @@
+<h1 mat-dialog-title>Hi {{data.email1}}</h1>
+<div mat-dialog-content>
+  <div [formGroup]="profileForm" class="form">
+    <div class="Name">
+      <label>
+        First Name:
+      </label>
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="fisrtName"
+        />
+      </mat-form-field>
+
+      <label>
+        Last Name:
+      </label>
+
+      <mat-form-field>
+        <input
+          class="form-control form-control-sm"
+          matInput
+          type="text"
+          formControlName="lastName"
+        />
+      </mat-form-field>
+    </div>
+
+    <label>
+      Email:
+    </label>
+
+    <mat-form-field>
+      <input
+        class="form-control form-control-sm"
+        matInput
+        type="text"
+        formControlName="email"
+      />
+      <mat-error *ngIf="profileForm.get('email')"> Email invalid</mat-error>
+    </mat-form-field>
+
+    <label>
+      Phone:
+    </label>
+
+    <mat-form-field>
+      <input
+        class="form-control form-control-sm"
+        matInput
+        type="text"
+        formControlName="Phone"
+      />
+    </mat-form-field>
+
+    <label>
+      Wallet:
+    </label>
+    <mat-form-field>
+      <input
+        class="form-control form-control-sm"
+        matInput
+        type="text"
+        formControlName="Wallet"
+      />
+    </mat-form-field>
+
+    <!-- <label>
+      Role:
+    </label>
+    <mat-form-field>
+      <mat-select formControlName="role">
+        <mat-option value="User">User</mat-option>
+        <mat-option value="Admin">Admin</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button
+    mat-button
+    (click)="onYesClick()"
+    [mat-dialog-close]="data.email1"
+    cdkFocusInitial
+  >
+    Ok
+  </button>
+</div>

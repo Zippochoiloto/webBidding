@@ -1,0 +1,76 @@
+body {
+  background-image: url(https://s3.envato.com/files/247451692/4.%20Preview%20Image.jpg);
+  display: flex;
+
+  background-size: cover;
+  width: 100%;
+}
+
+.Dashboard {
+  list-style-type: none;
+  display: flex;
+}
+
+li {
+  padding: 20px;
+}
+
+.mat-list-base .mat-list-item {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.card-body-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+body form {
+  display: flex;
+  justify-content: space-between;
+}
+
+body form > mat-icon {
+  padding-top: 13px;
+  cursor: pointer;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+body > mat-list {
+  height: 1000px;
+}
+.btn-danger {
+  background: red;
+  padding: 5px;
+  color: white;
+  border: 1px solid red;
+  border-radius: 10px;
+}
+.btn-normal {
+  background: green;
+  padding: 5px;
+  color: white;
+  border: 1px solid green;
+  border-radius: 10px;
+}
+
+
+body ul li img{
+  cursor: pointer;
+}

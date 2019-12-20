@@ -1,0 +1,83 @@
+
+header {
+    padding-top: 100px;
+    padding-left: 60px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    max-width: 500px;
+    font-size: 25px;
+    /* text-align: center; */
+}
+
+body{
+    padding:30px;
+    margin-left: 30px;
+    max-width: 300px;
+
+}
+
+body .form-group{
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+    max-width: 300px;
+
+}
+.form {
+    display:flex;
+    flex-direction: column;
+    /* border: 1px solid rgb(209, 192, 192) */
+}
+
+
+
+label {
+    margin: 0px;
+}
+
+input{
+
+    min-width: 300px;
+}
+
+mat-form-field{
+    min-width: 300px;
+    
+}
+button{
+    background-color: blue;
+    color: black;
+    cursor: pointer;
+    min-width: 100px;
+    text-align: center;
+}
+
+html{
+    background-image: url(http://www.lionleaf.com/wp-content/uploads/2014/11/1415275_22821821.jpg);
+    height: 100vh;
+    background-size:cover ;
+    width:100%;
+    display: flex;
+}
+
+.form-wrapper {
+    background-color: white;
+}
+
+div.submitButton {
+    display:flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    min-width: 300px;
+}
+
+#signUp{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+div mat-form-field{
+    display:flex;
+    justify-content: space-between;
+}
+

@@ -1,0 +1,55 @@
+.Dashboard {
+  list-style-type: none;
+  display: flex;
+}
+
+li {
+  padding-right: 10px;
+}
+
+body {
+  display: flex;
+}
+
+.mat-list-base .mat-list-item {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.card-body-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+body{
+  background-image: url(https://s3.envato.com/files/247451692/4.%20Preview%20Image.jpg);
+  height: 100vh;
+  background-size:cover ;
+  width:100%;
+}
+
+.btn-danger {
+  background: red;
+  padding: 5px;
+  color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.btn-normal{
+  background: green;
+  padding: 5px;
+  color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+body ul li img{
+  cursor: pointer;
+}
