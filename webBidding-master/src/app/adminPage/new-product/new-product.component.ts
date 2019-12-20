@@ -28,6 +28,7 @@ export class NewProductComponent implements OnInit {
   });
 
   onSubmit() {
+    
     this.postsService.createProd(this.profileForm.value).subscribe(data =>{
 
     })
